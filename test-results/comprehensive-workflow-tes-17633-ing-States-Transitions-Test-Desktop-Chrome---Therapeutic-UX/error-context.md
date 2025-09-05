@@ -1,0 +1,292 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e4]:
+      - generic [ref=e6]:
+        - link "CPAT CPAT Training Professional Development Platform" [ref=e7] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e8] [cursor=pointer]: CPAT
+          - generic [ref=e9] [cursor=pointer]:
+            - generic [ref=e10] [cursor=pointer]: CPAT Training
+            - paragraph [ref=e11] [cursor=pointer]: Professional Development Platform
+        - generic [ref=e12]:
+          - link "Training" [ref=e13] [cursor=pointer]:
+            - /url: /training
+            - img [ref=e14] [cursor=pointer]
+            - generic [ref=e17] [cursor=pointer]: Training
+          - link "Dashboard" [ref=e18] [cursor=pointer]:
+            - /url: /dashboard
+            - img [ref=e19] [cursor=pointer]
+            - generic [ref=e24] [cursor=pointer]: Dashboard
+          - link "Dialogue Trainer" [ref=e25] [cursor=pointer]:
+            - /url: /dialogue
+            - img [ref=e26] [cursor=pointer]
+            - generic [ref=e28] [cursor=pointer]: Dialogue Trainer
+          - link "Phrase Transformer" [ref=e29] [cursor=pointer]:
+            - /url: /transformer
+            - img [ref=e30] [cursor=pointer]
+            - generic [ref=e35] [cursor=pointer]: Phrase Transformer
+          - link "Session Generator" [ref=e36] [cursor=pointer]:
+            - /url: /generator
+            - img [ref=e37] [cursor=pointer]
+            - generic [ref=e40] [cursor=pointer]: Session Generator
+          - link "Safety Screening" [ref=e41] [cursor=pointer]:
+            - /url: /safety-screening
+            - img [ref=e42] [cursor=pointer]
+            - generic [ref=e44] [cursor=pointer]: Safety Screening
+    - navigation [ref=e45]:
+      - generic [ref=e47]:
+        - link "CPAT CPAT Training" [ref=e48] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e49] [cursor=pointer]: CPAT
+          - generic [ref=e51] [cursor=pointer]: CPAT Training
+        - button "Toggle navigation menu" [ref=e53] [cursor=pointer]:
+          - img [ref=e54] [cursor=pointer]
+    - main [ref=e55]:
+      - link "Skip to main content" [ref=e56] [cursor=pointer]:
+        - /url: "#main-content"
+      - banner "CPAT Training Welcome" [ref=e58]:
+        - main [ref=e59]:
+          - generic [ref=e60]:
+            - img [ref=e62]
+            - heading "Welcome to Your CPAT Journey" [level=1] [ref=e64]
+            - paragraph [ref=e65]:
+              - text: Transform your therapeutic practice with
+              - strong [ref=e66]: Color Light Aromatherapy Sound Positive Affirmation Therapy
+            - paragraph [ref=e67]: A comprehensive, evidence-based training program designed to integrate multi-sensory therapeutic modalities into your clinical practice
+          - generic [ref=e70]:
+            - heading "Your Learning Journey Includes" [level=2] [ref=e71]
+            - generic [ref=e72]:
+              - generic [ref=e74]:
+                - generic [ref=e75]:
+                  - img [ref=e77]
+                  - generic [ref=e79]:
+                    - heading "Light & Colour Fundamentals" [level=3] [ref=e80]
+                    - generic [ref=e81]:
+                      - generic [ref=e82]: Beginner
+                      - generic [ref=e83]: 60 minutes
+                - paragraph [ref=e84]: Master the foundational principles of light and colour therapy as the cornerstone of evidence-based CPAT clinical practice for licensed therapeutic professionals.
+                - generic [ref=e85]:
+                  - heading "Learning Objectives:" [level=4] [ref=e86]
+                  - list [ref=e87]:
+                    - listitem [ref=e88]:
+                      - generic [ref=e89]: •
+                      - generic [ref=e90]: Explain light/colour fundamentals (wavelength, frequency, intensity, coherence, monochromaticity, saturation) in clear client-friendly language
+                    - listitem [ref=e91]:
+                      - generic [ref=e92]: •
+                      - generic [ref=e93]: Describe biological and psychological pathways of light through skin and eyes, including visual & non-visual routes, hypothalamic, endocrine, and circadian responses
+                    - listitem [ref=e94]: +2 more objectives...
+              - generic [ref=e96]:
+                - generic [ref=e97]:
+                  - img [ref=e99]
+                  - generic [ref=e101]:
+                    - heading "CPAT Core Methodology" [level=3] [ref=e102]
+                    - generic [ref=e103]:
+                      - generic [ref=e104]: Beginner
+                      - generic [ref=e105]: 45 minutes
+                - paragraph [ref=e106]: Master CPAT's positive-only therapeutic dialogue principles and evidence-based CLAS integration for licensed mental health professionals.
+                - generic [ref=e107]:
+                  - heading "Learning Objectives:" [level=4] [ref=e108]
+                  - list [ref=e109]:
+                    - listitem [ref=e110]:
+                      - generic [ref=e111]: •
+                      - generic [ref=e112]: Apply CPAT dialogue rules (positive paraphrasing, affirming interpretations, reflective validation, positive assignments, positive summarizing) throughout a session
+                    - listitem [ref=e113]:
+                      - generic [ref=e114]: •
+                      - generic [ref=e115]: Design a 45-60 minute CPAT+CLAS protocol using colour selection frameworks (stimulating/sedating/harmonising)
+                    - listitem [ref=e116]: +2 more objectives...
+              - generic [ref=e118]:
+                - generic [ref=e119]:
+                  - img [ref=e121]
+                  - generic [ref=e123]:
+                    - heading "Assessment & Intake Protocols" [level=3] [ref=e124]
+                    - generic [ref=e125]:
+                      - generic [ref=e126]: Intermediate
+                      - generic [ref=e127]: 60 minutes
+                - paragraph [ref=e128]: Master the comprehensive assessment process and intake procedures for CPAT clients.
+                - generic [ref=e129]:
+                  - heading "Learning Objectives:" [level=4] [ref=e130]
+                  - list [ref=e131]:
+                    - listitem [ref=e132]:
+                      - generic [ref=e133]: •
+                      - generic [ref=e134]: Conduct comprehensive CPAT assessments
+                    - listitem [ref=e135]:
+                      - generic [ref=e136]: •
+                      - generic [ref=e137]: Identify contraindications and precautions
+                    - listitem [ref=e138]: +2 more objectives...
+              - generic [ref=e140]:
+                - generic [ref=e141]:
+                  - img [ref=e143]
+                  - generic [ref=e145]:
+                    - heading "Session Design & Planning" [level=3] [ref=e146]
+                    - generic [ref=e147]:
+                      - generic [ref=e148]: Intermediate
+                      - generic [ref=e149]: 75 minutes
+                - paragraph [ref=e150]: Learn to design effective CPAT sessions tailored to individual client needs and therapeutic goals.
+                - generic [ref=e151]:
+                  - heading "Learning Objectives:" [level=4] [ref=e152]
+                  - list [ref=e153]:
+                    - listitem [ref=e154]:
+                      - generic [ref=e155]: •
+                      - generic [ref=e156]: Design structured CPAT sessions
+                    - listitem [ref=e157]:
+                      - generic [ref=e158]: •
+                      - generic [ref=e159]: Select appropriate modalities for specific goals
+                    - listitem [ref=e160]: +2 more objectives...
+              - generic [ref=e162]:
+                - generic [ref=e163]:
+                  - img [ref=e165]
+                  - generic [ref=e167]:
+                    - heading "Advanced Therapeutic Techniques" [level=3] [ref=e168]
+                    - generic [ref=e169]:
+                      - generic [ref=e170]: Advanced
+                      - generic [ref=e171]: 90 minutes
+                - paragraph [ref=e172]: Master advanced CPAT techniques for complex presentations and specialized populations.
+                - generic [ref=e173]:
+                  - heading "Learning Objectives:" [level=4] [ref=e174]
+                  - list [ref=e175]:
+                    - listitem [ref=e176]:
+                      - generic [ref=e177]: •
+                      - generic [ref=e178]: Apply advanced CPAT techniques
+                    - listitem [ref=e179]:
+                      - generic [ref=e180]: •
+                      - generic [ref=e181]: Adapt approaches for special populations
+                    - listitem [ref=e182]: +2 more objectives...
+              - generic [ref=e184]:
+                - generic [ref=e185]:
+                  - img [ref=e187]
+                  - generic [ref=e189]:
+                    - heading "Ethics & Safety in Practice" [level=3] [ref=e190]
+                    - generic [ref=e191]:
+                      - generic [ref=e192]: Intermediate
+                      - generic [ref=e193]: 60 minutes
+                - paragraph [ref=e194]: Understand the ethical considerations and safety protocols essential for responsible CPAT practice.
+                - generic [ref=e195]:
+                  - heading "Learning Objectives:" [level=4] [ref=e196]
+                  - list [ref=e197]:
+                    - listitem [ref=e198]:
+                      - generic [ref=e199]: •
+                      - generic [ref=e200]: Apply ethical principles to CPAT practice
+                    - listitem [ref=e201]:
+                      - generic [ref=e202]: •
+                      - generic [ref=e203]: Ensure client safety in all interventions
+                    - listitem [ref=e204]: +2 more objectives...
+              - generic [ref=e206]:
+                - generic [ref=e207]:
+                  - img [ref=e209]
+                  - generic [ref=e211]:
+                    - heading "Outcome Measurement & Evaluation" [level=3] [ref=e212]
+                    - generic [ref=e213]:
+                      - generic [ref=e214]: Advanced
+                      - generic [ref=e215]: 50 minutes
+                - paragraph [ref=e216]: Learn to measure and evaluate the effectiveness of CPAT interventions using evidence-based assessment tools.
+                - generic [ref=e217]:
+                  - heading "Learning Objectives:" [level=4] [ref=e218]
+                  - list [ref=e219]:
+                    - listitem [ref=e220]:
+                      - generic [ref=e221]: •
+                      - generic [ref=e222]: Select appropriate outcome measures
+                    - listitem [ref=e223]:
+                      - generic [ref=e224]: •
+                      - generic [ref=e225]: Implement systematic progress monitoring
+                    - listitem [ref=e226]: +2 more objectives...
+            - generic [ref=e227]:
+              - heading "Why CPAT Training?" [level=3] [ref=e228]
+              - generic [ref=e229]:
+                - generic [ref=e230]:
+                  - heading "Evidence-Based Approach" [level=4] [ref=e231]:
+                    - img [ref=e232]
+                    - text: Evidence-Based Approach
+                  - list [ref=e234]:
+                    - listitem [ref=e235]:
+                      - generic [ref=e236]: •
+                      - generic [ref=e237]: Backed by peer-reviewed research in neuroscience and psychology
+                    - listitem [ref=e238]:
+                      - generic [ref=e239]: •
+                      - generic [ref=e240]: Integrates proven therapeutic modalities
+                    - listitem [ref=e241]:
+                      - generic [ref=e242]: •
+                      - generic [ref=e243]: Measurable outcomes and progress tracking
+                - generic [ref=e244]:
+                  - heading "Clinical Excellence" [level=4] [ref=e245]:
+                    - img [ref=e246]
+                    - text: Clinical Excellence
+                  - list [ref=e248]:
+                    - listitem [ref=e249]:
+                      - generic [ref=e250]: •
+                      - generic [ref=e251]: Enhanced therapeutic outcomes for clients
+                    - listitem [ref=e252]:
+                      - generic [ref=e253]: •
+                      - generic [ref=e254]: Expanded treatment modalities and options
+                    - listitem [ref=e255]:
+                      - generic [ref=e256]: •
+                      - generic [ref=e257]: Professional development and CE credits
+            - generic [ref=e258]:
+              - generic [ref=e259]:
+                - img [ref=e261]
+                - heading "Interactive Learning" [level=4] [ref=e263]
+                - paragraph [ref=e264]: Engaging content with practical exercises, case studies, and hands-on applications
+              - generic [ref=e265]:
+                - img [ref=e267]
+                - heading "Certification" [level=4] [ref=e269]
+                - paragraph [ref=e270]: Earn professional certification upon successful completion of all modules
+              - generic [ref=e271]:
+                - img [ref=e273]
+                - heading "Ongoing Support" [level=4] [ref=e275]
+                - paragraph [ref=e276]: Access to resources, updates, and professional community
+            - generic [ref=e278]:
+              - paragraph [ref=e279]: Ready to transform your therapeutic practice with evidence-based multi-sensory interventions?
+              - button "Begin Your CPAT Journey" [ref=e280] [cursor=pointer]:
+                - generic [ref=e282] [cursor=pointer]:
+                  - generic [ref=e283] [cursor=pointer]: Begin Your CPAT Journey
+                  - img [ref=e284] [cursor=pointer]
+              - paragraph [ref=e286]: Your learning journey begins with essential safety guidelines and clinical considerations, followed by comprehensive training in each CPAT modality.
+          - generic [ref=e287]:
+            - generic [ref=e288]:
+              - generic [ref=e289]: Evidence-Based
+              - generic [ref=e291]: CE Approved
+              - generic [ref=e293]: Clinically Validated
+            - paragraph [ref=e295]: CPAT Professional Training - Advancing Therapeutic Practice Through Multi-Sensory Integration
+    - generic [ref=e296]:
+      - generic [ref=e297]:
+        - heading "Performance Monitor" [level=2] [ref=e298]
+        - button [ref=e299] [cursor=pointer]:
+          - img [ref=e300] [cursor=pointer]
+      - generic [ref=e303]:
+        - button "Overview" [ref=e304] [cursor=pointer]:
+          - img [ref=e305] [cursor=pointer]
+          - text: Overview
+        - button "Vitals" [ref=e307] [cursor=pointer]:
+          - img [ref=e308] [cursor=pointer]
+          - text: Vitals
+        - button "Animations" [ref=e310] [cursor=pointer]:
+          - img [ref=e311] [cursor=pointer]
+          - text: Animations
+        - button "Alerts" [ref=e313] [cursor=pointer]:
+          - img [ref=e314] [cursor=pointer]
+          - text: Alerts
+      - generic [ref=e317]:
+        - generic [ref=e318]:
+          - heading "⚡ Performance Overview" [level=3] [ref=e319]
+          - generic [ref=e320]:
+            - generic [ref=e321]: "100"
+            - generic [ref=e322]:
+              - generic [ref=e323]: Budget Compliance
+              - generic [ref=e324]: Clinical performance standards
+        - generic [ref=e325]:
+          - generic [ref=e326]:
+            - generic [ref=e327]: "0"
+            - generic [ref=e328]: Active Animations
+          - generic [ref=e329]:
+            - generic [ref=e330]: "0"
+            - generic [ref=e331]: Active Alerts
+        - generic [ref=e332]:
+          - generic [ref=e333]:
+            - img [ref=e334]
+            - generic [ref=e337]: Optimization Opportunities
+          - generic [ref=e338]: 3 recommendations
+          - generic [ref=e339]: "Est. savings: 150KB"
+  - generic [ref=e340]: CPAT Training Welcome page loaded. Navigate with Tab key or use the skip to main content link.
+```

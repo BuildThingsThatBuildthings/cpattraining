@@ -1,0 +1,126 @@
+/* ===================================================== */
+/* CLINICAL TYPOGRAPHY UTILITY CLASSES                  */
+/* ===================================================== */
+
+/* Typography variants for specific use cases */
+.text-clinical-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text-primary);
+  letter-spacing: -0.015em;
+}
+
+.text-clinical-subtitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text-secondary);
+}
+
+.text-clinical-body {
+  font-family: var(--font-body);
+  font-size: var(--text-base); /* 18px */
+  line-height: 1.8;
+  color: var(--text-primary);
+}
+
+.text-clinical-caption {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* Specialized layouts for clinical content */
+.clinical-content {
+  max-width: 75ch;
+  margin: 0 auto;
+  font-size: var(--text-base);
+  line-height: 1.8;
+}
+
+.clinical-content h1 {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.clinical-content h2 {
+  margin-top: var(--space-12);
+  margin-bottom: var(--space-6);
+}
+
+.clinical-content h3 {
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-5);
+}
+
+.clinical-content p {
+  margin-bottom: var(--space-5);
+}
+
+.clinical-content ul,
+.clinical-content ol {
+  margin-bottom: var(--space-5);
+  padding-left: var(--space-6);
+}
+
+.clinical-content li {
+  margin-bottom: var(--space-2);
+  line-height: 1.7;
+}
+
+/* Enhanced Accessibility for Clinical Environments */
+.high-contrast-text {
+  color: #FFFFFF; /* Maximum contrast */
+  font-weight: 500;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.therapeutic-emphasis {
+  color: #A1C7B1; /* Improved contrast sage */
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.safety-text {
+  color: #FCA5A5; /* High contrast red for safety */
+  font-weight: 600;
+  font-size: var(--text-base);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  background: rgba(220, 38, 38, 0.1); /* Subtle background for emphasis */
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+/* Enhanced Mobile Typography Adjustments */
+@media (max-width: 768px) {
+  .clinical-content {
+    max-width: none;
+    padding: 0 var(--space-4);
+    font-size: var(--text-base); /* Ensure readable base size */
+  }
+  
+  .text-clinical-title {
+    font-size: var(--text-3xl);
+    line-height: 1.35; /* Better mobile line height */
+  }
+  
+  .text-clinical-subtitle {
+    font-size: var(--text-xl);
+    line-height: 1.45; /* Improved mobile readability */
+  }
+  
+  .clinical-content p {
+    font-size: var(--text-base); /* Ensure paragraphs are readable */
+    margin-bottom: var(--space-6); /* More spacing on mobile */
+  }
+  
+  .clinical-content li {
+    font-size: var(--text-base); /* Ensure list items are readable */
+    line-height: 1.8; /* Better line spacing */
+    margin-bottom: var(--space-3); /* More space between items */
+  }
+}

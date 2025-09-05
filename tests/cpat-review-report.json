@@ -1,0 +1,13 @@
+{
+  "timestamp": "2025-09-04T20:34:53.471Z",
+  "summary": {
+    "totalErrors": 0,
+    "consoleMessages": 3,
+    "consoleErrors": 0
+  },
+  "errors": [],
+  "consoleMessages": [],
+  "recommendations": [
+    "✅ No critical errors detected"
+  ]
+}

@@ -1,0 +1,315 @@
+<testsuites id="" name="" tests="7" failures="2" skipped="0" errors="0" time="29.468124">
+<testsuite name="comprehensive-workflow-test.spec.ts" timestamp="2025-09-04T22:31:48.960Z" hostname="Desktop Chrome - Therapeutic UX" tests="7" failures="2" skipped="0" time="14.506" errors="0">
+<testcase name="Comprehensive CPAT Training Workflow › Complete Training Workflow - Full Journey" classname="comprehensive-workflow-test.spec.ts" time="4.699">
+<failure message="comprehensive-workflow-test.spec.ts:27:3 Complete Training Workflow - Full Journey" type="FAILURE">
+<![CDATA[  [Desktop Chrome - Therapeutic UX] › comprehensive-workflow-test.spec.ts:27:3 › Comprehensive CPAT Training Workflow › Complete Training Workflow - Full Journey 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 6
+    Received: 7
+
+       at workflow-test-suite.ts:15
+
+      13 |   // Check training modules preview
+      14 |   const moduleCards = page.locator('[data-whimsy="module-preview-card"]');
+    > 15 |   expect(await moduleCards.count()).toBe(6);
+         |                                     ^
+      16 |   
+      17 |   // Verify therapeutic styling is applied
+      18 |   await expect(page.locator('.therapeutic-app')).toBeVisible();
+        at testLandingAndWelcome (/Users/ryan/cpat_training/cpat-training-platform/tests/e2e/workflow-test-suite.ts:15:37)
+        at /Users/ryan/cpat_training/cpat-training-platform/tests/e2e/comprehensive-workflow-test.spec.ts:32:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/comprehensive-workflow-tes-a48e7-ing-Workflow---Full-Journey-Desktop-Chrome---Therapeutic-UX/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../test-results/comprehensive-workflow-tes-a48e7-ing-Workflow---Full-Journey-Desktop-Chrome---Therapeutic-UX/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/comprehensive-workflow-tes-a48e7-ing-Workflow---Full-Journey-Desktop-Chrome---Therapeutic-UX/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/comprehensive-workflow-tes-a48e7-ing-Workflow---Full-Journey-Desktop-Chrome---Therapeutic-UX/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/comprehensive-workflow-tes-a48e7-ing-Workflow---Full-Journey-Desktop-Chrome---Therapeutic-UX/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 6
+    Received: 7
+
+       at workflow-test-suite.ts:15
+
+      13 |   // Check training modules preview
+      14 |   const moduleCards = page.locator('[data-whimsy="module-preview-card"]');
+    > 15 |   expect(await moduleCards.count()).toBe(6);
+         |                                     ^
+      16 |   
+      17 |   // Verify therapeutic styling is applied
+      18 |   await expect(page.locator('.therapeutic-app')).toBeVisible();
+        at testLandingAndWelcome (/Users/ryan/cpat_training/cpat-training-platform/tests/e2e/workflow-test-suite.ts:15:37)
+        at /Users/ryan/cpat_training/cpat-training-platform/tests/e2e/comprehensive-workflow-test.spec.ts:32:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/comprehensive-workflow-tes-a48e7-ing-Workflow---Full-Journey-Desktop-Chrome---Therapeutic-UX-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../test-results/comprehensive-workflow-tes-a48e7-ing-Workflow---Full-Journey-Desktop-Chrome---Therapeutic-UX-retry1/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/comprehensive-workflow-tes-a48e7-ing-Workflow---Full-Journey-Desktop-Chrome---Therapeutic-UX-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/comprehensive-workflow-tes-a48e7-ing-Workflow---Full-Journey-Desktop-Chrome---Therapeutic-UX-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/comprehensive-workflow-tes-a48e7-ing-Workflow---Full-Journey-Desktop-Chrome---Therapeutic-UX-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[🚀 Starting comprehensive CPAT training workflow test...
+📍 Testing landing page and welcome experience...
+  📍 Landing on welcome page...
+
+[[ATTACHMENT|../../test-results/comprehensive-workflow-tes-a48e7-ing-Workflow---Full-Journey-Desktop-Chrome---Therapeutic-UX/test-failed-1.png]]
+
+[[ATTACHMENT|../../test-results/comprehensive-workflow-tes-a48e7-ing-Workflow---Full-Journey-Desktop-Chrome---Therapeutic-UX/video.webm]]
+
+[[ATTACHMENT|../../test-results/comprehensive-workflow-tes-a48e7-ing-Workflow---Full-Journey-Desktop-Chrome---Therapeutic-UX/error-context.md]]
+
+[[ATTACHMENT|../../test-results/comprehensive-workflow-tes-a48e7-ing-Workflow---Full-Journey-Desktop-Chrome---Therapeutic-UX/trace.zip]]
+🚀 Starting comprehensive CPAT training workflow test...
+📍 Testing landing page and welcome experience...
+  📍 Landing on welcome page...
+
+[[ATTACHMENT|../../test-results/comprehensive-workflow-tes-a48e7-ing-Workflow---Full-Journey-Desktop-Chrome---Therapeutic-UX-retry1/test-failed-1.png]]
+
+[[ATTACHMENT|../../test-results/comprehensive-workflow-tes-a48e7-ing-Workflow---Full-Journey-Desktop-Chrome---Therapeutic-UX-retry1/video.webm]]
+
+[[ATTACHMENT|../../test-results/comprehensive-workflow-tes-a48e7-ing-Workflow---Full-Journey-Desktop-Chrome---Therapeutic-UX-retry1/error-context.md]]
+
+[[ATTACHMENT|../../test-results/comprehensive-workflow-tes-a48e7-ing-Workflow---Full-Journey-Desktop-Chrome---Therapeutic-UX-retry1/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Comprehensive CPAT Training Workflow › Therapeutic UI &amp; Interactions Test" classname="comprehensive-workflow-test.spec.ts" time="1.327">
+<system-out>
+<![CDATA[🎨 Testing therapeutic animations and UI interactions...
+  🎨 Testing therapeutic animations and UI interactions...
+  ✅ Therapeutic animations and interactions verified
+]]>
+</system-out>
+</testcase>
+<testcase name="Comprehensive CPAT Training Workflow › Mobile Responsiveness Test" classname="comprehensive-workflow-test.spec.ts" time="1.548">
+<system-out>
+<![CDATA[📱 Testing mobile responsiveness...
+  📱 Testing mobile responsiveness...
+  ✅ Mobile responsiveness verified
+]]>
+</system-out>
+</testcase>
+<testcase name="Comprehensive CPAT Training Workflow › Error Handling &amp; Boundaries Test" classname="comprehensive-workflow-test.spec.ts" time="1.293">
+<system-out>
+<![CDATA[🚨 Testing error boundaries and edge cases...
+  🚨 Testing error boundaries and edge cases...
+  ✅ Error boundary functionality verified
+]]>
+</system-out>
+</testcase>
+<testcase name="Comprehensive CPAT Training Workflow › Loading States &amp; Transitions Test" classname="comprehensive-workflow-test.spec.ts" time="3.19">
+<failure message="comprehensive-workflow-test.spec.ts:76:3 Loading States &amp; Transitions Test" type="FAILURE">
+<![CDATA[  [Desktop Chrome - Therapeutic UX] › comprehensive-workflow-test.spec.ts:76:3 › Comprehensive CPAT Training Workflow › Loading States & Transitions Test 
+
+    Error: expect.toBeVisible: Error: strict mode violation: locator('main') resolved to 2 elements:
+        1) <main role="main" class="pt-20">…</main> aka getByText('Skip to main contentWelcome')
+        2) <main tabindex="-1" id="main-content" class="focus:outline-none">…</main> aka locator('#main-content')
+
+    Call log:
+      - Expect "toBeVisible" with timeout 10000ms
+      - waiting for locator('main')
+
+
+       at workflow-test-suite.ts:297
+
+      295 |   
+      296 |   // Check that content loads smoothly
+    > 297 |   await expect(page.locator('main')).toBeVisible();
+          |                                      ^
+      298 |   
+      299 |   // Test navigation transitions
+      300 |   const navigationLinks = page.locator('nav a, [role="button"]');
+        at testLoadingStates (/Users/ryan/cpat_training/cpat-training-platform/tests/e2e/workflow-test-suite.ts:297:38)
+        at /Users/ryan/cpat_training/cpat-training-platform/tests/e2e/comprehensive-workflow-test.spec.ts:78:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/comprehensive-workflow-tes-17633-ing-States-Transitions-Test-Desktop-Chrome---Therapeutic-UX/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../test-results/comprehensive-workflow-tes-17633-ing-States-Transitions-Test-Desktop-Chrome---Therapeutic-UX/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/comprehensive-workflow-tes-17633-ing-States-Transitions-Test-Desktop-Chrome---Therapeutic-UX/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/comprehensive-workflow-tes-17633-ing-States-Transitions-Test-Desktop-Chrome---Therapeutic-UX/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/comprehensive-workflow-tes-17633-ing-States-Transitions-Test-Desktop-Chrome---Therapeutic-UX/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: expect.toBeVisible: Error: strict mode violation: locator('main') resolved to 2 elements:
+        1) <main role="main" class="pt-20">…</main> aka getByText('Skip to main contentWelcome')
+        2) <main tabindex="-1" id="main-content" class="focus:outline-none">…</main> aka locator('#main-content')
+
+    Call log:
+      - Expect "toBeVisible" with timeout 10000ms
+      - waiting for locator('main')
+
+
+       at workflow-test-suite.ts:297
+
+      295 |   
+      296 |   // Check that content loads smoothly
+    > 297 |   await expect(page.locator('main')).toBeVisible();
+          |                                      ^
+      298 |   
+      299 |   // Test navigation transitions
+      300 |   const navigationLinks = page.locator('nav a, [role="button"]');
+        at testLoadingStates (/Users/ryan/cpat_training/cpat-training-platform/tests/e2e/workflow-test-suite.ts:297:38)
+        at /Users/ryan/cpat_training/cpat-training-platform/tests/e2e/comprehensive-workflow-test.spec.ts:78:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/comprehensive-workflow-tes-17633-ing-States-Transitions-Test-Desktop-Chrome---Therapeutic-UX-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../test-results/comprehensive-workflow-tes-17633-ing-States-Transitions-Test-Desktop-Chrome---Therapeutic-UX-retry1/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/comprehensive-workflow-tes-17633-ing-States-Transitions-Test-Desktop-Chrome---Therapeutic-UX-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/comprehensive-workflow-tes-17633-ing-States-Transitions-Test-Desktop-Chrome---Therapeutic-UX-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/comprehensive-workflow-tes-17633-ing-States-Transitions-Test-Desktop-Chrome---Therapeutic-UX-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[⏳ Testing loading states and transitions...
+  ⏳ Testing loading states and transitions...
+
+[[ATTACHMENT|../../test-results/comprehensive-workflow-tes-17633-ing-States-Transitions-Test-Desktop-Chrome---Therapeutic-UX/test-failed-1.png]]
+
+[[ATTACHMENT|../../test-results/comprehensive-workflow-tes-17633-ing-States-Transitions-Test-Desktop-Chrome---Therapeutic-UX/video.webm]]
+
+[[ATTACHMENT|../../test-results/comprehensive-workflow-tes-17633-ing-States-Transitions-Test-Desktop-Chrome---Therapeutic-UX/error-context.md]]
+
+[[ATTACHMENT|../../test-results/comprehensive-workflow-tes-17633-ing-States-Transitions-Test-Desktop-Chrome---Therapeutic-UX/trace.zip]]
+⏳ Testing loading states and transitions...
+  ⏳ Testing loading states and transitions...
+
+[[ATTACHMENT|../../test-results/comprehensive-workflow-tes-17633-ing-States-Transitions-Test-Desktop-Chrome---Therapeutic-UX-retry1/test-failed-1.png]]
+
+[[ATTACHMENT|../../test-results/comprehensive-workflow-tes-17633-ing-States-Transitions-Test-Desktop-Chrome---Therapeutic-UX-retry1/video.webm]]
+
+[[ATTACHMENT|../../test-results/comprehensive-workflow-tes-17633-ing-States-Transitions-Test-Desktop-Chrome---Therapeutic-UX-retry1/error-context.md]]
+
+[[ATTACHMENT|../../test-results/comprehensive-workflow-tes-17633-ing-States-Transitions-Test-Desktop-Chrome---Therapeutic-UX-retry1/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Comprehensive CPAT Training Workflow › Accessibility Compliance Test" classname="comprehensive-workflow-test.spec.ts" time="1.309">
+<system-out>
+<![CDATA[♿ Testing accessibility compliance...
+♿ Accessibility tests completed
+]]>
+</system-out>
+</testcase>
+<testcase name="Comprehensive CPAT Training Workflow › Performance &amp; Animation Optimization Test" classname="comprehensive-workflow-test.spec.ts" time="1.14">
+<system-out>
+<![CDATA[⚡ Testing performance and animations...
+⚡ Performance metrics collected: {
+  navigation: {
+    name: [32m'http://localhost:5173/training'[39m,
+    entryType: [32m'navigation'[39m,
+    startTime: [33m0[39m,
+    duration: [33m63.79999999701977[39m,
+    initiatorType: [32m'navigation'[39m,
+    deliveryType: [32m''[39m,
+    nextHopProtocol: [32m'http/1.1'[39m,
+    renderBlockingStatus: [32m'non-blocking'[39m,
+    workerStart: [33m0[39m,
+    workerRouterEvaluationStart: [33m0[39m,
+    workerCacheLookupStart: [33m0[39m,
+    workerMatchedSourceType: [32m''[39m,
+    workerFinalSourceType: [32m''[39m,
+    redirectStart: [33m0[39m,
+    redirectEnd: [33m0[39m,
+    fetchStart: [33m1.2000000029802322[39m,
+    domainLookupStart: [33m1.2000000029802322[39m,
+    domainLookupEnd: [33m1.2000000029802322[39m,
+    connectStart: [33m1.2000000029802322[39m,
+    secureConnectionStart: [33m0[39m,
+    connectEnd: [33m1.2000000029802322[39m,
+    requestStart: [33m1.7999999970197678[39m,
+    responseStart: [33m6.799999997019768[39m,
+    firstInterimResponseStart: [33m0[39m,
+    finalResponseHeadersStart: [33m6.799999997019768[39m,
+    responseEnd: [33m7.100000008940697[39m,
+    transferSize: [33m939[39m,
+    encodedBodySize: [33m639[39m,
+    decodedBodySize: [33m639[39m,
+    responseStatus: [33m200[39m,
+    serverTiming: [],
+    unloadEventStart: [33m8.200000002980232[39m,
+    unloadEventEnd: [33m8.200000002980232[39m,
+    domInteractive: [33m11.100000008940697[39m,
+    domContentLoadedEventStart: [33m62.79999999701977[39m,
+    domContentLoadedEventEnd: [33m62.900000005960464[39m,
+    domComplete: [33m63.79999999701977[39m,
+    loadEventStart: [33m63.79999999701977[39m,
+    loadEventEnd: [33m63.79999999701977[39m,
+    type: [32m'reload'[39m,
+    redirectCount: [33m0[39m,
+    activationStart: [33m0[39m,
+    criticalCHRestart: [33m0[39m,
+    notRestoredReasons: [1mnull[22m
+  },
+  paint: [
+    {
+      name: [32m'first-paint'[39m,
+      entryType: [32m'paint'[39m,
+      startTime: [33m80[39m,
+      duration: [33m0[39m
+    },
+    {
+      name: [32m'first-contentful-paint'[39m,
+      entryType: [32m'paint'[39m,
+      startTime: [33m116[39m,
+      duration: [33m0[39m
+    }
+  ]
+}
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

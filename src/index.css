@@ -1,0 +1,579 @@
+/* CPAT Training Platform - Professional Clinical Interface */
+/* Import fonts first before any other CSS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600&display=swap');
+
+/* Tailwind CSS Base Styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===================================================== */
+/* DESIGN TOKENS - CLAS365 INSPIRED                     */
+/* ===================================================== */
+
+:root {
+  /* Premium Dark Foundation - Luxury Professional */
+  --slate-950: #0A0D10;  /* Deepest luxury dark */
+  --slate-900: #0E1317;  /* Premium background with blue undertone */
+  --slate-800: #1A2028;  /* Elevated card backgrounds */
+  --slate-700: #242A33;  /* Interactive surfaces */
+  --slate-600: #374150;  /* Refined muted elements */
+  --slate-500: #6B727F;  /* Sophisticated secondary text */
+  --slate-400: #9CA2AE;  /* Premium placeholder text */
+  --slate-300: #D1D4DA;  /* Refined borders */
+  --slate-200: #E5E6EA;  /* Light premium borders */
+  --slate-100: #F3F4F6;  /* Luxury light backgrounds */
+  --slate-50:  #F9FAFB;  /* Premium subtle backgrounds */
+  
+  /* Premium Sage System - Luxury Therapeutic */
+  --sage-950: #1A2B1A;   /* Deepest therapeutic sage */
+  --sage-900: #1E301E;   /* Deep sage for luxury text */
+  --sage-800: #2F4A2F;   /* Elevated dark sage accents */
+  --sage-700: #5D8E75;   /* Primary sage with golden undertone */
+  --sage-600: #A1C7B1;   /* Refined light sage */
+  --sage-500: #D1E6D8;   /* Premium soft sage */
+  --sage-400: #D8E9DE;   /* Elevated light sage */
+  --sage-300: #E4F1E8;   /* Luxury sage tint */
+  --sage-200: #F1F8F3;   /* Premium pale sage */
+  --sage-100: #F9FCFA;   /* Ultra-light luxury sage */
+  --sage-50:  #FDFEFD;   /* Pure sage whisper */
+  
+  /* Premium Champagne System - Ultra-Luxury Highlights */
+  --champagne-900: #6B4F0F; /* Deepest champagne for premium text */
+  --champagne-800: #8B6914; /* Rich champagne - WCAG compliant */
+  --champagne-700: #B8941C; /* Elevated champagne accent */
+  --champagne-600: #D6C29B; /* Primary luxury champagne */
+  --champagne-500: #E1D5B4; /* Refined light champagne */
+  --champagne-400: #ECE5CC; /* Premium soft champagne */
+  --champagne-300: #F6F2E4; /* Ultra-light champagne */
+  --champagne-200: #FDFBF8; /* Champagne whisper */
+  --champagne-100: #FEFCFA; /* Pure champagne light */
+  --champagne-50:  #FFFEFD; /* Absolute champagne pure */
+  
+  /* Enhanced Semantic Colors for Better Contrast */
+  --text-primary: #FFFFFF;        /* Pure white for maximum contrast */
+  --text-secondary: #E2E8F0;     /* Light gray with better contrast */
+  --text-muted: #CBD5E0;         /* Improved muted text contrast */
+  --text-inverse: var(--slate-900);
+  --text-luxury: #FFFFFF;        /* Pure white for premium elements */
+  --text-champagne: #F7E98E;     /* Brighter champagne for better visibility */
+  --text-sage: #A1C7B1;         /* Lighter sage for improved contrast */
+  
+  --surface-primary: var(--slate-900);
+  --surface-secondary: var(--slate-800);
+  --surface-tertiary: var(--slate-700);
+  --surface-light: var(--slate-50);
+  
+  --border-primary: var(--slate-700);
+  --border-secondary: var(--slate-600);
+  --border-light: var(--slate-300);
+  
+  /* Enhanced Interactive States */
+  --primary-bg: #5D8E75;         /* Direct sage value for consistency */
+  --primary-hover: #7A907A;      /* Lighter for hover feedback */
+  --primary-active: #4A6B5A;     /* Darker for active state */
+  --primary-text: #FFFFFF;       /* Pure white for maximum contrast */
+  
+  --secondary-bg: transparent;
+  --secondary-hover: var(--sage-200);
+  --secondary-active: var(--sage-300);
+  --secondary-text: var(--sage-700);
+  --secondary-border: var(--sage-700);
+  
+  --accent-bg: var(--champagne-600);
+  --accent-hover: var(--champagne-500);
+  --accent-text: var(--slate-900);
+  
+  /* Typography Scale - Clinical Professional Design */
+  --font-heading: 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+  
+  /* Optimized Typography Scale for Enhanced Readability */
+  --text-xs: 0.875rem;    /* 14px - Minimum readable size for captions */
+  --text-sm: 1rem;        /* 16px - Secondary information, mobile base */
+  --text-base: 1.125rem;  /* 18px - Primary body text, optimal reading */
+  --text-lg: 1.25rem;     /* 20px - Emphasized body text */
+  --text-xl: 1.375rem;    /* 22px - Subheadings */
+  --text-2xl: 1.625rem;   /* 26px - Card titles, section headers */
+  --text-3xl: 2rem;       /* 32px - H3 headers */
+  --text-4xl: 2.5rem;     /* 40px - H2 headers */
+  --text-5xl: 3.125rem;   /* 50px - H1 headers */
+  --text-6xl: 3.75rem;    /* 60px - Hero display */
+  --text-7xl: 4.375rem;   /* 70px - Large hero */
+  --text-8xl: 5rem;       /* 80px - Maximum impact */
+  
+  /* Spacing Scale */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  
+  /* Border Radius */
+  --radius-sm: 0.375rem;  /* 6px */
+  --radius-md: 0.5rem;    /* 8px */
+  --radius-lg: 0.75rem;   /* 12px */
+  --radius-xl: 1rem;      /* 16px */
+  --radius-2xl: 1.5rem;   /* 24px */
+  --radius-full: 9999px;
+  
+  /* Premium Luxury Shadows */
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.06);
+  --shadow-md: 0 4px 8px -2px rgb(0 0 0 / 0.12), 0 2px 4px -2px rgb(0 0 0 / 0.08);
+  --shadow-lg: 0 12px 20px -4px rgb(0 0 0 / 0.15), 0 4px 8px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 24px 32px -8px rgb(0 0 0 / 0.18), 0 8px 16px -8px rgb(0 0 0 / 0.12);
+  --shadow-2xl: 0 32px 48px -12px rgb(0 0 0 / 0.2), 0 12px 24px -8px rgb(0 0 0 / 0.15);
+  --shadow-3xl: 0 48px 80px -16px rgb(0 0 0 / 0.25), 0 16px 32px -8px rgb(0 0 0 / 0.18);
+  
+  /* Luxury Colored Shadows */
+  --shadow-sage: 0 12px 24px -8px rgb(93 142 117 / 0.15), 0 4px 8px -4px rgb(93 142 117 / 0.1);
+  --shadow-champagne: 0 12px 24px -8px rgb(214 194 155 / 0.2), 0 4px 8px -4px rgb(214 194 155 / 0.15);
+  --shadow-glow: 0 0 20px rgb(93 142 117 / 0.3), 0 0 40px rgb(93 142 117 / 0.15);
+  --shadow-luxury-lift: 0 32px 64px -16px rgb(0 0 0 / 0.25), 0 16px 40px -12px rgb(93 142 117 / 0.1);
+  
+  /* Premium Luxury Transitions */
+  --transition-fast: 150ms cubic-bezier(0.23, 1, 0.32, 1);    /* Therapeutic ease-out */
+  --transition-base: 250ms cubic-bezier(0.23, 1, 0.32, 1);     /* Premium base */
+  --transition-slow: 400ms cubic-bezier(0.23, 1, 0.32, 1);     /* Luxury slow */
+  --transition-luxury: 600ms cubic-bezier(0.19, 1, 0.22, 1);   /* Ultra-smooth luxury */
+  --transition-spring: 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Premium spring */
+  --transition-therapeutic: 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Healing motion */
+}
+
+/* ===================================================== */
+/* RESET & BASE STYLES                                  */
+/* ===================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base); /* 18px for optimal readability */
+  line-height: 1.75; /* Optimized line height for better reading */
+  color: var(--text-primary);
+  background: var(--slate-950);
+  min-height: 100vh;
+  text-rendering: optimizeLegibility;
+  letter-spacing: 0.005em; /* Subtle letter spacing for clarity */
+  font-feature-settings: "liga", "kern";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow-x: hidden;
+  /* Enhanced text shadow for better readability over rainbow background */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Soft Rainbow Background Animation */
+body::before {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: -2;
+  opacity: 0.08;
+  background: radial-gradient(circle at 30% 70%, transparent 20%, hsl(0, 70%, 60%) 50%, transparent 80%);
+  animation: rainbow-cycle 30s ease-in-out infinite;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: -30%;
+  right: -30%;
+  width: 160%;
+  height: 160%;
+  z-index: -1;
+  opacity: 0.06;
+  background: radial-gradient(circle at 70% 30%, transparent 30%, hsl(240, 70%, 60%) 60%, transparent 90%);
+  animation: rainbow-cycle-offset 28s ease-in-out infinite reverse;
+}
+
+@keyframes rainbow-cycle {
+  0% { background: radial-gradient(circle at 30% 70%, transparent 20%, hsl(0, 70%, 60%) 50%, transparent 80%); }
+  14.28% { background: radial-gradient(circle at 35% 65%, transparent 20%, hsl(240, 70%, 60%) 50%, transparent 80%); }
+  28.56% { background: radial-gradient(circle at 40% 75%, transparent 20%, hsl(60, 80%, 65%) 50%, transparent 80%); }
+  42.84% { background: radial-gradient(circle at 25% 60%, transparent 20%, hsl(30, 80%, 60%) 50%, transparent 80%); }
+  57.12% { background: radial-gradient(circle at 45% 80%, transparent 20%, hsl(120, 60%, 55%) 50%, transparent 80%); }
+  71.4% { background: radial-gradient(circle at 30% 55%, transparent 20%, hsl(270, 70%, 60%) 50%, transparent 80%); }
+  85.68% { background: radial-gradient(circle at 50% 70%, transparent 20%, hsl(300, 70%, 60%) 50%, transparent 80%); }
+  100% { background: radial-gradient(circle at 30% 70%, transparent 20%, hsl(0, 70%, 60%) 50%, transparent 80%); }
+}
+
+@keyframes rainbow-cycle-offset {
+  0% { background: radial-gradient(circle at 70% 30%, transparent 30%, hsl(120, 60%, 55%) 60%, transparent 90%); }
+  14.28% { background: radial-gradient(circle at 65% 35%, transparent 30%, hsl(270, 70%, 60%) 60%, transparent 90%); }
+  28.56% { background: radial-gradient(circle at 75% 25%, transparent 30%, hsl(300, 70%, 60%) 60%, transparent 90%); }
+  42.84% { background: radial-gradient(circle at 60% 40%, transparent 30%, hsl(0, 70%, 60%) 60%, transparent 90%); }
+  57.12% { background: radial-gradient(circle at 80% 30%, transparent 30%, hsl(240, 70%, 60%) 60%, transparent 90%); }
+  71.4% { background: radial-gradient(circle at 70% 45%, transparent 30%, hsl(60, 80%, 65%) 60%, transparent 90%); }
+  85.68% { background: radial-gradient(circle at 65% 25%, transparent 30%, hsl(30, 80%, 60%) 60%, transparent 90%); }
+  100% { background: radial-gradient(circle at 70% 30%, transparent 30%, hsl(120, 60%, 55%) 60%, transparent 90%); }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  body::after {
+    animation: none;
+    opacity: 0.02; /* Further reduced for better text visibility */
+  }
+  
+  /* Enhanced text shadows for reduced motion users */
+  body {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+  }
+}
+
+/* ===================================================== */
+/* CLINICAL TYPOGRAPHY UTILITY CLASSES                  */
+/* ===================================================== */
+
+/* Enhanced Typography variants for Clinical Readability */
+.text-clinical-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: 600;
+  line-height: 1.3; /* Better line height for readability */
+  color: var(--text-primary);
+  letter-spacing: -0.01em; /* Subtle letter spacing */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* Enhanced shadow */
+}
+
+.text-clinical-subtitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-primary); /* Use primary for better contrast */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.text-clinical-body {
+  font-family: var(--font-body);
+  font-size: var(--text-base); /* 18px optimal for reading */
+  line-height: 1.75; /* Improved line spacing */
+  color: var(--text-primary);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.text-clinical-caption {
+  font-family: var(--font-body);
+  font-size: var(--text-sm); /* Increased from xs */
+  line-height: 1.7; /* Better line height */
+  color: var(--text-secondary); /* Better contrast than muted */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* Enhanced Focus Management for Better Accessibility */
+.therapeutic-focus-ring {
+  transition: all var(--transition-therapeutic);
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.therapeutic-focus-ring:focus,
+.therapeutic-focus-ring:focus-visible {
+  outline: 3px solid #A1C7B1; /* High contrast sage */
+  outline-offset: 3px;
+  box-shadow: 
+    0 0 0 1px #FFFFFF, /* White inner ring for visibility */
+    0 0 0 5px rgba(161, 199, 177, 0.4), /* Sage glow */
+    0 0 24px rgba(161, 199, 177, 0.3),
+    var(--shadow-luxury-lift);
+  transform: translateY(-2px);
+  /* Enhanced text contrast on focus */
+  color: #FFFFFF !important;
+  background: rgba(93, 142, 117, 0.2);
+}
+
+.therapeutic-focus-ring:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+  transform: none;
+  background: transparent;
+}
+
+/* Premium Interactive States */
+.luxury-interactive {
+  transition: all var(--transition-luxury);
+  cursor: pointer;
+}
+
+.luxury-interactive:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: var(--shadow-luxury-lift);
+}
+
+.luxury-interactive:active {
+  transform: translateY(-1px) scale(0.98);
+  transition: all 100ms ease-out;
+}
+
+/* Premium Navigation Styles */
+nav.fixed {
+  background: rgba(14, 19, 23, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(93, 142, 117, 0.2) !important;
+  box-shadow: 0 8px 32px -8px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Enhanced Navigation Buttons with Better Contrast */
+.nav-button {
+  @apply px-3 py-1.5 rounded-xl text-sm font-medium flex items-center gap-1.5 border;
+  transition: all var(--transition-base);
+  backdrop-filter: blur(8px);
+  /* Improved minimum size for better accessibility */
+  min-height: 36px;
+  min-width: 36px;
+}
+
+.nav-button.active {
+  color: #FFFFFF; /* Pure white for maximum contrast */
+  background: rgba(93, 142, 117, 0.3);
+  border-color: #A1C7B1;
+  box-shadow: var(--shadow-sage);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.nav-button:not(.active) {
+  color: #E2E8F0; /* Improved contrast */
+  background: rgba(26, 32, 40, 0.6);
+  border-color: rgba(161, 199, 177, 0.2);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.nav-button:not(.active):hover {
+  background: rgba(93, 142, 117, 0.2);
+  color: #FFFFFF;
+  border-color: #A1C7B1;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Premium Glass Morphism Effects */
+.glass-morphism {
+  background: rgba(26, 32, 40, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-morphism-light {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-morphism-sage {
+  background: rgba(93, 142, 117, 0.1);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(93, 142, 117, 0.3);
+}
+
+/* Premium Luxury Card Effects */
+.luxury-card {
+  background: linear-gradient(135deg, 
+    rgba(26, 32, 40, 0.95) 0%, 
+    rgba(36, 43, 52, 0.9) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(93, 142, 117, 0.2);
+  box-shadow: var(--shadow-luxury-lift);
+  transition: all var(--transition-luxury);
+}
+
+.luxury-card:hover {
+  transform: translateY(-8px) rotateX(2deg) rotateY(1deg);
+  box-shadow: var(--shadow-3xl), var(--shadow-glow);
+  border-color: rgba(93, 142, 117, 0.4);
+}
+
+/* Premium Floating Effects */
+.floating-element {
+  animation: luxuryFloat 6s ease-in-out infinite;
+}
+
+@keyframes luxuryFloat {
+  0%, 100% { 
+    transform: translateY(0px);
+    opacity: 0.8;
+  }
+  50% { 
+    transform: translateY(-8px);
+    opacity: 1;
+  }
+}
+
+/* Champagne Shimmer Effect */
+.champagne-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.champagne-shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(214, 194, 155, 0.4),
+    transparent
+  );
+  animation: champagneGlide 2.5s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes champagneGlide {
+  0% { transform: translateX(-100%) skewX(-20deg); }
+  100% { transform: translateX(200%) skewX(-20deg); }
+}
+
+/* Simplified Gradient Backgrounds */
+.luxury-gradient-primary {
+  background: linear-gradient(135deg,
+    var(--slate-900) 0%,
+    var(--slate-800) 100%);
+}
+
+.luxury-gradient-champagne {
+  background: linear-gradient(135deg,
+    var(--champagne-600) 0%,
+    var(--champagne-500) 50%,
+    var(--champagne-400) 100%);
+}
+
+.luxury-gradient-sage {
+  background: linear-gradient(135deg,
+    var(--sage-700) 0%,
+    var(--sage-600) 50%,
+    var(--sage-500) 100%);
+}
+
+/* Enhanced Mobile Navigation with Better Accessibility */
+@media (max-width: 768px) {
+  .mobile-nav-overlay {
+    @apply fixed inset-0 z-40;
+    background: rgba(10, 13, 16, 0.9); /* Darker for better contrast */
+    backdrop-filter: blur(8px);
+  }
+  
+  .mobile-nav-menu {
+    @apply py-2 border-t;
+    background: rgba(14, 19, 23, 0.95);
+    backdrop-filter: blur(20px);
+    border-color: rgba(161, 199, 177, 0.4); /* Better contrast */
+  }
+  
+  .mobile-nav-item {
+    @apply w-full px-4 py-4 text-left rounded-lg text-base font-medium flex items-center gap-3 border;
+    transition: all var(--transition-base);
+    min-height: 48px; /* Better touch target */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  }
+  
+  .mobile-nav-item.active {
+    color: #FFFFFF; /* Pure white for contrast */
+    background: rgba(93, 142, 117, 0.3);
+    border-color: #A1C7B1;
+    box-shadow: var(--shadow-sage);
+  }
+  
+  .mobile-nav-item:not(.active) {
+    color: #E2E8F0; /* Better contrast */
+    background: rgba(26, 32, 40, 0.6);
+    border-color: rgba(161, 199, 177, 0.2);
+  }
+  
+  .mobile-nav-item:not(.active):hover {
+    background: rgba(93, 142, 117, 0.2);
+    color: #FFFFFF;
+    border-color: #A1C7B1;
+  }
+  
+  /* Enhanced typography for mobile */
+  .text-clinical-title {
+    font-size: var(--text-3xl); /* Smaller on mobile but still readable */
+    line-height: 1.35;
+  }
+  
+  .text-clinical-body {
+    font-size: var(--text-base); /* Keep base size for readability */
+    line-height: 1.8; /* More spacing on mobile */
+  }
+  
+  body {
+    font-size: var(--text-base); /* Ensure minimum 18px on mobile */
+  }
+}
+
+/* Premium Rainbow Cycle Background Animation */
+.rainbow-cycle-bg {
+  background: linear-gradient(
+    -45deg,
+    rgba(93, 142, 117, 0.3),
+    rgba(214, 194, 155, 0.2),
+    rgba(93, 142, 117, 0.2),
+    rgba(214, 194, 155, 0.3),
+    rgba(93, 142, 117, 0.25),
+    rgba(214, 194, 155, 0.15)
+  );
+  background-size: 400% 400%;
+  animation: rainbowCycle 12s ease-in-out infinite;
+}
+
+@keyframes rainbowCycle {
+  0% { 
+    background-position: 0% 50%;
+    opacity: 0.8;
+  }
+  25% { 
+    background-position: 100% 50%;
+    opacity: 0.9;
+  }
+  50% { 
+    background-position: 100% 100%;
+    opacity: 0.7;
+  }
+  75% { 
+    background-position: 0% 100%;
+    opacity: 0.85;
+  }
+  100% { 
+    background-position: 0% 50%;
+    opacity: 0.8;
+  }
+}

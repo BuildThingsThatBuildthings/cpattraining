@@ -1,0 +1,1282 @@
+/* CLAS365 Therapeutic Design System - Clean Foundation */
+/* CPAT Training Platform - Professional Clinical Interface */
+
+/* Import Professional Typography - MUST come before @tailwind */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600&display=swap');
+
+/* Import Clinical Typography Utils */
+@import url('./styles/typography-utils.css');
+
+/* Tailwind CSS Base Styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===================================================== */
+/* DESIGN TOKENS - CLAS365 INSPIRED                     */
+/* ===================================================== */
+
+:root {
+  /* Primary Color Palette - Dark Slate Foundation */
+  --slate-950: #0B0F12;  /* Deep professional dark */
+  --slate-900: #0F1418;  /* Primary background */
+  --slate-800: #1A2128;  /* Card backgrounds */
+  --slate-700: #242B34;  /* Interactive elements */
+  --slate-600: #374151;  /* Muted elements */
+  --slate-500: #6B7280;  /* Secondary text */
+  --slate-400: #9CA3AF;  /* Placeholder text */
+  --slate-300: #D1D5DB;  /* Borders */
+  --slate-200: #E5E7EB;  /* Light borders */
+  --slate-100: #F3F4F6;  /* Light backgrounds */
+  --slate-50:  #F9FAFB;  /* Subtle backgrounds */
+  
+  /* Sage Accent System - Natural Healing */
+  --sage-900: #1C2e1C;   /* Deep sage for text */
+  --sage-800: #2D4A2D;   /* Dark sage accents */
+  --sage-700: #5C8D74;   /* Primary sage (from specs) */
+  --sage-600: #9FC6AF;   /* Light sage (from specs) */
+  --sage-500: #CFE5D7;   /* Soft sage (from specs) */
+  --sage-400: #D6E8DD;   /* Very light sage */
+  --sage-300: #E3F0E7;   /* Subtle sage tint */
+  --sage-200: #F0F7F2;   /* Pale sage background */
+  --sage-100: #F8FBF9;   /* Lightest sage */
+  
+  /* Champagne Highlight System - Luxury Touches */
+  --champagne-700: #8B6914; /* Deep champagne - WCAG compliant */
+  --champagne-600: #D6C29B; /* Primary champagne (from specs) */
+  --champagne-500: #E1D4B3; /* Light champagne */
+  --champagne-400: #ECE4CB; /* Soft champagne */
+  --champagne-300: #F6F1E3; /* Pale champagne */
+  --champagne-200: #FDFAF7; /* Champagne tint */
+  
+  /* Semantic Colors */
+  --text-primary: #EAF0ED;    /* Off-white for dark surfaces */
+  --text-secondary: var(--slate-400);
+  --text-muted: var(--slate-500);
+  --text-inverse: var(--slate-900);
+  
+  --surface-primary: var(--slate-900);
+  --surface-secondary: var(--slate-800);
+  --surface-tertiary: var(--slate-700);
+  --surface-light: var(--slate-50);
+  
+  --border-primary: var(--slate-700);
+  --border-secondary: var(--slate-600);
+  --border-light: var(--slate-300);
+  
+  /* Interactive States */
+  --primary-bg: var(--sage-700);
+  --primary-hover: var(--sage-600);
+  --primary-active: var(--sage-800);
+  --primary-text: var(--text-primary); /* Use off-white for better contrast */
+  
+  --secondary-bg: transparent;
+  --secondary-hover: var(--sage-200);
+  --secondary-active: var(--sage-300);
+  --secondary-text: var(--sage-700);
+  --secondary-border: var(--sage-700);
+  
+  --accent-bg: var(--champagne-600);
+  --accent-hover: var(--champagne-500);
+  --accent-text: var(--slate-900);
+  
+  /* Status Colors - WCAG AA Compliant */
+  --success-bg: #065F46;
+  --success-text: #D1FAE5;
+  --warning-bg: #92400E;
+  --warning-text: #FEF3C7;
+  --danger-bg: #991B1B;
+  --danger-text: #FEE2E2;
+  --info-bg: #1E40AF;
+  --info-text: #DBEAFE;
+  
+  /* Typography Scale - Clinical Professional Design */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+  
+  /* Refined Typography Scale for Clinical Readability */
+  --text-xs: 0.75rem;   /* 12px - Captions, footnotes */
+  --text-sm: 0.875rem;  /* 14px - Secondary information */
+  --text-base: 1.125rem; /* 18px - Primary body text (upgraded from 16px) */
+  --text-lg: 1.25rem;   /* 20px - Emphasized body text */
+  --text-xl: 1.375rem;  /* 22px - Subheadings */
+  --text-2xl: 1.5rem;   /* 24px - Card titles, section headers */
+  --text-3xl: 1.875rem; /* 30px - H4 */
+  --text-4xl: 2.25rem;  /* 36px - H2 (as specified) */
+  --text-5xl: 3rem;     /* 48px - H1 minimum */
+  --text-6xl: 4rem;     /* 64px - H1 maximum for hero sections */
+  
+  /* Spacing Scale */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  
+  /* Border Radius */
+  --radius-sm: 0.375rem;  /* 6px */
+  --radius-md: 0.5rem;    /* 8px */
+  --radius-lg: 0.75rem;   /* 12px */
+  --radius-xl: 1rem;      /* 16px */
+  --radius-2xl: 1.5rem;   /* 24px */
+  --radius-full: 9999px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===================================================== */
+/* RESET & BASE STYLES                                  */
+/* ===================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base); /* Now 18px for better readability */
+  line-height: 1.8; /* Increased for clinical environments */
+  color: var(--text-primary);
+  background-color: var(--surface-primary);
+  min-height: 100vh;
+  text-rendering: optimizeLegibility;
+  letter-spacing: 0.01em; /* Subtle spacing for professionalism */
+}
+
+/* ===================================================== */
+/* REFINED TYPOGRAPHY HIERARCHY - CLINICAL LUXURY       */
+/* ===================================================== */
+
+/* Base heading styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.3; /* Improved for clinical readability */
+  color: var(--text-primary);
+  margin-bottom: var(--space-6); /* Increased spacing */
+  text-wrap: balance; /* Better text wrapping */
+}
+
+/* H1 - Page Heroes (48-64px as specified) */
+h1 {
+  font-size: var(--text-5xl); /* 48px base */
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: var(--space-8);
+}
+
+/* H1 Hero variant for landing pages */
+.h1-hero {
+  font-size: var(--text-6xl); /* 64px for impact */
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+
+/* H2 - Major sections (36px as specified) */
+h2 {
+  font-size: var(--text-4xl); /* 36px exactly */
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  margin-bottom: var(--space-6);
+}
+
+/* H3 - Subsections */
+h3 {
+  font-size: var(--text-3xl); /* 30px */
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-5);
+}
+
+/* H4 - Card titles, minor sections */
+h4 {
+  font-size: var(--text-2xl); /* 24px */
+  font-weight: 600;
+  margin-bottom: var(--space-4);
+}
+
+/* H5 - Emphasized content */
+h5 {
+  font-size: var(--text-xl); /* 22px */
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+}
+
+/* H6 - Minor headings */
+h6 {
+  font-size: var(--text-lg); /* 20px */
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+}
+
+/* Refined paragraph styling for clinical readability */
+p {
+  margin-bottom: var(--space-5); /* Increased spacing */
+  max-width: 75ch; /* Slightly wider for 18px text */
+  line-height: 1.8; /* Match body line-height */
+  font-size: var(--text-base); /* Explicit 18px */
+}
+
+/* Specialized paragraph variants */
+.p-large {
+  font-size: var(--text-lg); /* 20px for emphasis */
+  line-height: 1.7;
+  max-width: 70ch;
+}
+
+.p-small {
+  font-size: var(--text-sm); /* 14px for captions */
+  line-height: 1.6;
+  max-width: 80ch;
+}
+
+/* Lead paragraph for introductions */
+.p-lead {
+  font-size: var(--text-lg); /* 20px */
+  line-height: 1.7;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-6);
+  max-width: 65ch;
+}
+
+/* ===================================================== */
+/* COMPONENT SYSTEM                                     */
+/* ===================================================== */
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  min-height: 44px; /* Touch-friendly */
+}
+
+.btn:focus {
+  outline: 2px solid var(--primary-bg);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  border-color: var(--primary-bg);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-bg);
+  color: var(--secondary-text);
+  border-color: var(--secondary-border);
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-hover);
+  border-color: var(--secondary-text);
+}
+
+.btn-accent {
+  background-color: var(--accent-bg);
+  color: var(--accent-text);
+  border-color: var(--accent-bg);
+}
+
+.btn-accent:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+/* Cards */
+.card {
+  background-color: var(--surface-secondary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+}
+
+.card:hover {
+  border-color: var(--sage-700);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.card-header {
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border-secondary);
+  margin-bottom: var(--space-4);
+}
+
+.card-title {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.card-description {
+  color: var(--text-secondary);
+  margin: var(--space-2) 0 0 0;
+}
+
+/* Form Elements */
+.form-group {
+  margin-bottom: var(--space-4);
+}
+
+.label {
+  display: block;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.input,
+.textarea,
+.select {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  background-color: var(--surface-secondary);
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  transition: border-color var(--transition-fast);
+}
+
+.input:focus,
+.textarea:focus,
+.select:focus {
+  outline: none;
+  border-color: var(--primary-bg);
+  box-shadow: 0 0 0 3px rgb(92 141 116 / 0.1);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--text-muted);
+}
+
+/* Navigation */
+.nav {
+  background-color: var(--surface-secondary);
+  border-bottom: 1px solid var(--border-primary);
+  padding: var(--space-4) 0;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text-primary);
+}
+
+/* Alert/Callout Components */
+.alert {
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid;
+  margin: var(--space-4) 0;
+}
+
+.alert-success {
+  background-color: var(--success-bg);
+  color: var(--success-text);
+  border-color: #10B981;
+}
+
+.alert-warning {
+  background-color: var(--warning-bg);
+  color: var(--warning-text);
+  border-color: #F59E0B;
+}
+
+.alert-danger {
+  background-color: var(--danger-bg);
+  color: var(--danger-text);
+  border-color: #EF4444;
+}
+
+.alert-info {
+  background-color: var(--info-bg);
+  color: var(--info-text);
+  border-color: #3B82F6;
+}
+
+/* CPAT-Specific Safety Callout */
+.alert-safety {
+  background-color: var(--danger-bg);
+  color: var(--danger-text);
+  border-color: #DC2626;
+  font-weight: 500;
+}
+
+.alert-safety::before {
+  content: "⚠ SAFETY: ";
+  font-weight: 700;
+}
+
+/* ===================================================== */
+/* LAYOUT SYSTEM                                        */
+/* ===================================================== */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+  width: 100%;
+}
+
+.section {
+  padding: var(--space-16) 0;
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.grid-cols-1 { grid-template-columns: 1fr; }
+.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+
+/* ===================================================== */
+/* UTILITY CLASSES                                      */
+/* ===================================================== */
+
+/* Text utilities */
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted { color: var(--text-muted); }
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+/* Spacing utilities */
+.mb-0 { margin-bottom: 0; }
+.mb-2 { margin-bottom: var(--space-2); }
+.mb-4 { margin-bottom: var(--space-4); }
+.mb-6 { margin-bottom: var(--space-6); }
+.mb-8 { margin-bottom: var(--space-8); }
+
+.mt-0 { margin-top: 0; }
+.mt-2 { margin-top: var(--space-2); }
+.mt-4 { margin-top: var(--space-4); }
+.mt-6 { margin-top: var(--space-6); }
+.mt-8 { margin-top: var(--space-8); }
+
+.p-4 { padding: var(--space-4); }
+.p-6 { padding: var(--space-6); }
+.p-8 { padding: var(--space-8); }
+
+/* Flexbox utilities */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.gap-2 { gap: var(--space-2); }
+.gap-4 { gap: var(--space-4); }
+.gap-6 { gap: var(--space-6); }
+
+/* Layout utilities */
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+.min-h-screen { min-height: 100vh; }
+
+/* Hide visually but keep for screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===================================================== */
+/* RESPONSIVE DESIGN                                    */
+/* ===================================================== */
+
+/* ===================================================== */
+/* RESPONSIVE TYPOGRAPHY FOR MOBILE                     */
+/* ===================================================== */
+
+@media (max-width: 768px) {
+  :root {
+    /* Mobile typography scale - maintains readability */
+    --text-6xl: 3rem;     /* 48px - Hero H1 on mobile */
+    --text-5xl: 2.5rem;   /* 40px - Regular H1 on mobile */
+    --text-4xl: 2rem;     /* 32px - H2 on mobile */
+    --text-3xl: 1.75rem;  /* 28px - H3 on mobile */
+    --text-base: 1.125rem; /* Keep 18px body text on mobile */
+  }
+  
+  /* Mobile typography adjustments */
+  body {
+    line-height: 1.7; /* Slightly tighter on mobile */
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.25; /* Tighter heading line-height on mobile */
+    margin-bottom: var(--space-4); /* Reduced spacing on mobile */
+  }
+  
+  p {
+    max-width: none; /* Full width on mobile */
+    margin-bottom: var(--space-4);
+  }
+  
+  .container {
+    padding: 0 var(--space-3);
+  }
+  
+  .section {
+    padding: var(--space-12) 0;
+  }
+  
+  .grid-cols-2,
+  .grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}
+
+/* Desktop-specific typography adjustments */
+@media (min-width: 769px) {
+  .btn {
+    width: auto;
+  }
+  
+  /* Optimal reading widths on larger screens */
+  p {
+    max-width: 75ch;
+  }
+  
+  .p-lead {
+    max-width: 65ch;
+  }
+  
+  .p-large {
+    max-width: 70ch;
+  }
+}
+
+/* ===================================================== */
+/* ACCESSIBILITY ENHANCEMENTS                           */
+/* ===================================================== */
+
+/* Focus management */
+:focus-visible {
+  outline: 2px solid var(--primary-bg);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --text-primary: #FFFFFF;
+    --text-secondary: #E5E5E5;
+    --surface-primary: #000000;
+    --surface-secondary: #1A1A1A;
+    --primary-bg: #00AA00;
+    --border-primary: #FFFFFF;
+  }
+}
+
+/* ===================================================== */
+/* LUXURY THERAPEUTIC INTERACTIONS                      */
+/* ===================================================== */
+
+/* Keyframe animations for therapeutic luxury */
+@keyframes champagne-glint {
+  0% { transform: translateX(-100%) skew(-20deg); opacity: 0; }
+  50% { opacity: 0.6; }
+  100% { transform: translateX(200%) skew(-20deg); opacity: 0; }
+}
+
+@keyframes pearl-shimmer {
+  0%, 100% { box-shadow: var(--shadow-md); }
+  50% { box-shadow: 0 8px 25px -5px rgb(92 141 116 / 0.25), 0 4px 6px -4px rgb(92 141 116 / 0.1); }
+}
+
+@keyframes therapeutic-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-2px) rotate(0.5deg); }
+  66% { transform: translateY(1px) rotate(-0.3deg); }
+}
+
+@keyframes soft-glow-pulse {
+  0%, 100% { box-shadow: 0 0 5px rgba(143, 166, 142, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(143, 166, 142, 0.4), 0 0 30px rgba(143, 166, 142, 0.1); }
+}
+
+/* Luxury therapeutic interaction classes */
+.therapeutic-card-hover {
+  transition: all var(--transition-base);
+}
+
+.therapeutic-card-hover:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: var(--shadow-xl), 0 0 40px rgba(143, 166, 142, 0.15);
+  animation: pearl-shimmer 2s ease-in-out;
+}
+
+.champagne-cta {
+  position: relative;
+  overflow: hidden;
+}
+
+.champagne-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(214, 194, 155, 0.4), transparent);
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+.champagne-cta:hover::before {
+  left: 100%;
+}
+
+.pearl-surface {
+  position: relative;
+  background: rgba(26, 33, 40, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(143, 166, 142, 0.2);
+  transition: all var(--transition-base);
+}
+
+.pearl-surface::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(214, 194, 155, 0.1) 0%, transparent 50%, rgba(143, 166, 142, 0.1) 100%);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.pearl-surface:hover::before {
+  opacity: 1;
+}
+
+.pearl-surface:hover {
+  border-color: rgba(143, 166, 142, 0.3);
+  box-shadow: 0 8px 32px -8px rgba(143, 166, 142, 0.2);
+}
+
+.therapeutic-button-primary {
+  position: relative;
+  background: linear-gradient(135deg, var(--sage-700), var(--sage-600));
+  transition: all var(--transition-base);
+  overflow: hidden;
+}
+
+.therapeutic-button-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.therapeutic-button-primary:hover::after {
+  left: 100%;
+}
+
+.therapeutic-button-primary:hover {
+  background: linear-gradient(135deg, var(--sage-600), var(--sage-500));
+  box-shadow: 0 8px 25px -5px rgba(92, 141, 116, 0.4);
+  transform: translateY(-2px);
+}
+
+.gentle-therapeutic-motion {
+  animation: therapeutic-breathe 4s ease-in-out infinite;
+}
+
+.floating-element {
+  animation: gentle-float 8s ease-in-out infinite;
+}
+
+.soft-glow {
+  animation: soft-glow-pulse 3s ease-in-out infinite;
+}
+
+/* Clinical-appropriate micro-interactions */
+.clinical-hover-lift {
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.clinical-hover-lift:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px -2px rgba(143, 166, 142, 0.25);
+}
+
+/* ===================================================== */
+/* ACCESSIBILITY ENHANCEMENTS - WCAG AA COMPLIANCE      */
+/* ===================================================== */
+
+/* Enhanced Focus Management */
+.therapeutic-focus-ring {
+  transition: all var(--transition-fast);
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.therapeutic-focus-ring:focus,
+.therapeutic-focus-ring:focus-visible {
+  outline: 3px solid var(--sage-600);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px rgba(143, 166, 142, 0.3);
+}
+
+.therapeutic-focus-ring:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Skip to main content link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  background: var(--sage-primary);
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  z-index: 1000;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 16px;
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  :root {
+    --text-primary: #000000;
+    --text-secondary: #000000;
+    --surface-primary: #ffffff;
+    --sage-primary: #000080;
+    --sage-600: #000080;
+  }
+  
+  .therapeutic-focus-ring:focus,
+  .therapeutic-focus-ring:focus-visible {
+    outline: 4px solid #000000;
+    outline-offset: 4px;
+    background-color: #ffff00;
+  }
+  
+  button, 
+  input[type="checkbox"],
+  input[type="button"],
+  input[type="submit"] {
+    border: 2px solid #000000;
+  }
+  
+  .card {
+    background: #ffffff;
+    border: 2px solid #000000;
+    color: #000000;
+  }
+  
+  .therapeutic-button-primary {
+    background: #000080 !important;
+    color: #ffffff !important;
+    border: 2px solid #000000 !important;
+  }
+}
+
+/* Enhanced Touch Targets for Mobile Accessibility */
+@media (pointer: coarse) {
+  button,
+  input[type="checkbox"],
+  input[type="button"],
+  input[type="submit"],
+  a[role="button"],
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 12px;
+  }
+  
+  input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Screen Reader Utilities */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.focus\:not-sr-only:focus {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  padding: inherit !important;
+  margin: inherit !important;
+  overflow: visible !important;
+  clip: auto !important;
+  white-space: normal !important;
+}
+
+/* Clinical Safety Visual Indicators */
+[role="alert"] {
+  border-radius: 8px;
+  border: 2px solid currentColor;
+  padding: 16px;
+  margin: 16px 0;
+  font-weight: 500;
+}
+
+[role="status"][aria-live="polite"] {
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.clinical-warning {
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(239, 68, 68, 0.1));
+  border-left: 4px solid #dc2626;
+  color: #7f1d1d;
+}
+
+.clinical-caution {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(251, 191, 36, 0.1));
+  border-left: 4px solid #f59e0b;
+  color: #78350f;
+}
+
+.clinical-info {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(99, 102, 241, 0.1));
+  border-left: 4px solid #3b82f6;
+  color: #1e3a8a;
+}
+
+/* Enhanced keyboard navigation for complex components */
+[tabindex="0"]:focus,
+[tabindex="-1"]:focus {
+  outline: 3px solid var(--sage-600);
+  outline-offset: 2px;
+}
+
+/* Progress indicators accessibility */
+[role="progressbar"] {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+[role="progressbar"]:focus {
+  outline: 2px solid var(--sage-600);
+  outline-offset: 2px;
+}
+
+/* List accessibility improvements */
+[role="list"] {
+  list-style: none;
+  padding: 0;
+}
+
+[role="listitem"] {
+  position: relative;
+}
+
+/* Form Control Accessibility */
+input,
+select,
+textarea {
+  border: 2px solid var(--sage-300);
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 16px; /* Prevents zoom on iOS */
+  transition: border-color 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--sage-600);
+  box-shadow: 0 0 0 3px rgba(143, 166, 142, 0.3);
+}
+
+input:invalid,
+select:invalid,
+textarea:invalid {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+/* Checkbox and radio accessibility */
+input[type="checkbox"],
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:focus,
+input[type="radio"]:focus {
+  outline: 3px solid var(--sage-600);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+label:has(input:focus) {
+  color: var(--sage-800);
+}
+
+/* Card Focus Enhancements */
+.card:focus-within {
+  outline: 2px solid var(--sage-600);
+  outline-offset: 2px;
+  transform: translateY(-1px);
+}
+
+.card[tabindex] {
+  cursor: pointer;
+}
+
+.card[tabindex]:focus {
+  outline: 3px solid var(--sage-600);
+  outline-offset: 2px;
+  transform: translateY(-1px);
+}
+
+/* Focus management for dynamic content */
+.focus-trap {
+  position: relative;
+}
+
+.focus-trap:focus-within {
+  outline: 2px solid var(--sage-600);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* Loading states with accessibility */
+.loading-spinner {
+  animation: spin 1s linear infinite;
+  width: 24px;
+  height: 24px;
+  border: 3px solid var(--sage-300);
+  border-top: 3px solid var(--sage-600);
+  border-radius: 50%;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Status indicators */
+.status-success {
+  color: #059669;
+  background: rgba(5, 150, 105, 0.1);
+  border: 1px solid rgba(5, 150, 105, 0.2);
+}
+
+.status-warning {
+  color: #d97706;
+  background: rgba(217, 119, 6, 0.1);
+  border: 1px solid rgba(217, 119, 6, 0.2);
+}
+
+.status-error {
+  color: #dc2626;
+  background: rgba(220, 38, 38, 0.1);
+  border: 1px solid rgba(220, 38, 38, 0.2);
+}
+
+/* Landmark and navigation accessibility */
+main {
+  scroll-margin-top: 2rem;
+}
+
+main:focus {
+  outline: none;
+}
+
+/* Progress enhancement */
+.enhanced-progress {
+  position: relative;
+  overflow: hidden;
+}
+
+.enhanced-progress::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: champagne-glint 2s ease-in-out infinite;
+}
+
+/* Module card luxury enhancements */
+.luxury-module-card {
+  transition: all var(--transition-base);
+  background: linear-gradient(135deg, rgba(26, 33, 40, 0.9) 0%, rgba(36, 43, 52, 0.8) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(143, 166, 142, 0.15);
+}
+
+.luxury-module-card:hover {
+  transform: translateY(-3px) scale(1.005);
+  border-color: rgba(143, 166, 142, 0.3);
+  box-shadow: 
+    0 20px 40px -12px rgba(0, 0, 0, 0.4),
+    0 8px 16px -8px rgba(143, 166, 142, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.luxury-module-card .module-icon {
+  transition: all var(--transition-base);
+}
+
+.luxury-module-card:hover .module-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Enhanced Reduced Motion Support for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .card:hover,
+  .btn:hover,
+  .therapeutic-card-hover:hover,
+  .luxury-module-card:hover,
+  .clinical-hover-lift:hover,
+  .therapeutic-button-primary:hover {
+    transform: none !important;
+    animation: none !important;
+  }
+  
+  .gentle-therapeutic-motion,
+  .floating-element,
+  .soft-glow,
+  .loading-spinner {
+    animation: none !important;
+  }
+  
+  .transform {
+    transform: none !important;
+  }
+  
+  .transition-all,
+  .transition-colors,
+  .transition-opacity,
+  .transition-transform {
+    transition: none !important;
+  }
+}
+
+/* Enhanced High Contrast Mode for Accessibility */
+@media (prefers-contrast: high) {
+  .status-success {
+    color: #000000;
+    background: #90EE90;
+    border: 2px solid #000000;
+  }
+  
+  .status-warning {
+    color: #000000;
+    background: #FFFF00;
+    border: 2px solid #000000;
+  }
+  
+  .status-error {
+    color: #FFFFFF;
+    background: #FF0000;
+    border: 2px solid #000000;
+  }
+  
+  input,
+  select,
+  textarea {
+    border: 3px solid #000000;
+    background: #ffffff;
+    color: #000000;
+  }
+  
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-color: #000080;
+    background: #ffff00;
+    outline: 4px solid #000000;
+  }
+  
+  input[type="checkbox"]:checked,
+  input[type="radio"]:checked {
+    background: #000000;
+    border-color: #000000;
+  }
+  
+  .pearl-surface {
+    background: #ffffff;
+    border: 2px solid #000000;
+    color: #000000;
+  }
+  
+  .card:focus-within,
+  .card[tabindex]:focus {
+    outline: 4px solid #000000;
+    background: #f0f0f0;
+  }
+}
+
+/* Print styles for accessibility */
+@media print {
+  * {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+  
+  .btn {
+    border: 2px solid black !important;
+  }
+  
+  .card {
+    border: 1px solid black !important;
+  }
+  
+  .skip-link,
+  [aria-hidden="true"] {
+    display: none !important;
+  }
+  
+  .sr-only {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    clip: auto !important;
+    white-space: normal !important;
+  }
+}

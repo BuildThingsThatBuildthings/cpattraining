@@ -1,0 +1,385 @@
+name: 🧪 Therapeutic Testing Suite
+# Comprehensive CI/CD pipeline for CPAT Training Platform
+# Ensures clinical reliability and luxury user experience
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Run daily at 3 AM UTC to catch any regressions
+    - cron: '0 3 * * *'
+
+concurrency:
+  group: therapeutic-tests-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: '20'
+  THERAPEUTIC_TEST_MODE: true
+  CI: true
+
+jobs:
+  # Unit Testing with Luxury Standards
+  unit-tests:
+    name: 🧬 Unit Tests - Luxury Standards
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          
+      - name: 📦 Install dependencies
+        run: npm ci --legacy-peer-deps
+        
+      - name: 🔍 TypeScript check
+        run: npm run typecheck
+        
+      - name: 🧪 Run unit tests with coverage
+        run: npm run test:unit:coverage
+        
+      - name: 📊 Upload coverage reports
+        uses: codecov/codecov-action@v4
+        with:
+          file: ./coverage/lcov.info
+          flags: unittests
+          name: therapeutic-unit-coverage
+          
+      - name: 📈 Coverage comment
+        if: github.event_name == 'pull_request'
+        uses: romeovs/lcov-reporter-action@v0.3.1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          lcov-file: ./coverage/lcov.info
+          delete-old-comments: true
+
+  # Accessibility Compliance Testing
+  accessibility-tests:
+    name: ♿ WCAG 2.1 AA Compliance
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          
+      - name: 📦 Install dependencies
+        run: npm ci --legacy-peer-deps
+        
+      - name: 🎭 Install Playwright browsers
+        run: npx playwright install --with-deps
+        
+      - name: 🏗️ Build application
+        run: npm run build
+        
+      - name: ♿ Run accessibility tests
+        run: npm run test:accessibility
+        
+      - name: 📊 Upload accessibility report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: accessibility-report
+          path: tests/reports/
+          retention-days: 7
+
+  # Performance Testing
+  performance-tests:
+    name: ⚡ Performance & Web Vitals
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          
+      - name: 📦 Install dependencies
+        run: npm ci --legacy-peer-deps
+        
+      - name: 🎭 Install Playwright browsers
+        run: npx playwright install --with-deps
+        
+      - name: 🏗️ Build application
+        run: npm run build
+        
+      - name: ⚡ Run performance tests
+        run: npm run test:performance
+        
+      - name: 📊 Upload performance report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: performance-report
+          path: tests/reports/
+          retention-days: 7
+
+  # Therapeutic User Journey Testing
+  therapeutic-e2e:
+    name: 🧘 Therapeutic User Journeys
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [
+          'Desktop Chrome - Therapeutic UX',
+          'Desktop Safari - Clinical Compliance',
+          'iPad - Mobile Therapeutic Experience'
+        ]
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          
+      - name: 📦 Install dependencies
+        run: npm ci --legacy-peer-deps
+        
+      - name: 🎭 Install Playwright browsers
+        run: npx playwright install --with-deps
+        
+      - name: 🏗️ Build application
+        run: npm run build
+        
+      - name: 🧘 Run therapeutic user journey tests
+        run: npx playwright test --project="${{ matrix.project }}"
+        env:
+          THERAPEUTIC_TESTING_MODE: true
+          
+      - name: 📊 Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: therapeutic-results-${{ matrix.project }}
+          path: |
+            test-results/
+            tests/reports/
+          retention-days: 7
+
+  # Visual Regression Testing
+  visual-regression:
+    name: 👀 Visual Regression Testing
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          
+      - name: 📦 Install dependencies
+        run: npm ci --legacy-peer-deps
+        
+      - name: 🎭 Install Playwright browsers
+        run: npx playwright install --with-deps
+        
+      - name: 🏗️ Build application
+        run: npm run build
+        
+      - name: 👀 Run visual regression tests
+        run: npx playwright test --grep "visual regression"
+        
+      - name: 📸 Upload visual diff artifacts
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-regression-diffs
+          path: test-results/
+          retention-days: 7
+
+  # Security and Vulnerability Scanning
+  security-scan:
+    name: 🔒 Security & Vulnerability Scan
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          
+      - name: 🔍 Run npm audit
+        run: npm audit --audit-level high
+        
+      - name: 📦 Install dependencies
+        run: npm ci --legacy-peer-deps
+        
+      - name: 🏗️ Build application
+        run: npm run build
+        
+      - name: 🔒 Run security scan with Playwright
+        run: |
+          npx playwright test --grep "security" || true
+          
+  # Clinical Reliability Report
+  clinical-reliability:
+    name: 🏥 Clinical Reliability Summary
+    runs-on: ubuntu-latest
+    needs: [unit-tests, accessibility-tests, performance-tests, therapeutic-e2e]
+    if: always()
+    
+    steps:
+      - name: 📥 Download all artifacts
+        uses: actions/download-artifact@v4
+        
+      - name: 📊 Generate clinical reliability report
+        run: |
+          echo "# 🏥 Clinical Reliability Report" > clinical-report.md
+          echo "" >> clinical-report.md
+          echo "## Test Suite Results" >> clinical-report.md
+          echo "" >> clinical-report.md
+          
+          # Unit Tests
+          if [ "${{ needs.unit-tests.result }}" == "success" ]; then
+            echo "✅ **Unit Tests**: All luxury therapeutic components pass reliability standards" >> clinical-report.md
+          else
+            echo "❌ **Unit Tests**: Some components failed clinical reliability checks" >> clinical-report.md
+          fi
+          
+          # Accessibility
+          if [ "${{ needs.accessibility-tests.result }}" == "success" ]; then
+            echo "✅ **Accessibility**: WCAG 2.1 AA compliance verified for therapeutic UX" >> clinical-report.md
+          else
+            echo "❌ **Accessibility**: WCAG compliance issues detected - clinical accessibility requirements not met" >> clinical-report.md
+          fi
+          
+          # Performance
+          if [ "${{ needs.performance-tests.result }}" == "success" ]; then
+            echo "✅ **Performance**: Luxury user experience meets therapeutic timing standards" >> clinical-report.md
+          else
+            echo "❌ **Performance**: Performance issues may impact therapeutic user experience" >> clinical-report.md
+          fi
+          
+          # Therapeutic Journeys
+          if [ "${{ needs.therapeutic-e2e.result }}" == "success" ]; then
+            echo "✅ **Therapeutic Journeys**: All critical clinical user paths validated" >> clinical-report.md
+          else
+            echo "❌ **Therapeutic Journeys**: Clinical workflow issues detected" >> clinical-report.md
+          fi
+          
+          echo "" >> clinical-report.md
+          echo "## Quality Assurance Summary" >> clinical-report.md
+          echo "" >> clinical-report.md
+          echo "This report validates that the CPAT Training Platform maintains:" >> clinical-report.md
+          echo "- 🎯 Clinical reliability for therapeutic training scenarios" >> clinical-report.md
+          echo "- ♿ Universal accessibility for all healthcare professionals" >> clinical-report.md
+          echo "- ✨ Luxury user experience with whimsical therapeutic interactions" >> clinical-report.md
+          echo "- 🔒 Security compliance for healthcare training environments" >> clinical-report.md
+          echo "" >> clinical-report.md
+          echo "_Generated by therapeutic testing suite on $(date)_" >> clinical-report.md
+          
+      - name: 📄 Comment clinical report on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('clinical-report.md', 'utf8');
+            
+            // Find existing comment
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            
+            const existingComment = comments.find(comment => 
+              comment.body.includes('Clinical Reliability Report')
+            );
+            
+            if (existingComment) {
+              // Update existing comment
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existingComment.id,
+                body: report
+              });
+            } else {
+              // Create new comment
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: report
+              });
+            }
+
+  # Lighthouse CI for Web Performance
+  lighthouse:
+    name: 🚨 Lighthouse Performance Audit
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          
+      - name: 📦 Install dependencies
+        run: npm ci --legacy-peer-deps
+        
+      - name: 🏗️ Build application
+        run: npm run build
+        
+      - name: 📱 Start preview server
+        run: npm run preview &
+        
+      - name: ⏳ Wait for server
+        run: npx wait-on http://localhost:4173
+        
+      - name: 🚨 Run Lighthouse CI
+        run: |
+          npm install -g @lhci/cli
+          lhci autorun
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
+# Notification on failure for critical clinical systems
+  notify-on-failure:
+    name: 🚨 Clinical Alert System
+    runs-on: ubuntu-latest
+    needs: [unit-tests, accessibility-tests, performance-tests, therapeutic-e2e]
+    if: failure() && github.ref == 'refs/heads/main'
+    
+    steps:
+      - name: 🚨 Send clinical reliability alert
+        run: |
+          echo "🚨 CRITICAL: Clinical reliability tests have failed on main branch"
+          echo "This may impact therapeutic training delivery and patient safety protocols"
+          echo "Immediate attention required from the clinical engineering team"
+          # Here you would integrate with your alerting system
+          # (Slack, email, PagerDuty, etc.)

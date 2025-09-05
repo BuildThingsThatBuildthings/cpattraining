@@ -1,0 +1,702 @@
+{
+  "config": {
+    "configFile": "/Users/ryan/cpat_training/cpat-training-platform/playwright.config.js",
+    "rootDir": "/Users/ryan/cpat_training/cpat-training-platform/tests/e2e",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        {
+          "outputFolder": "tests/reports/e2e"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "tests/reports/test-results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "tests/reports/junit.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/ryan/cpat_training/cpat-training-platform/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Desktop Chrome - Therapeutic UX",
+        "name": "Desktop Chrome - Therapeutic UX",
+        "testDir": "/Users/ryan/cpat_training/cpat-training-platform/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/ryan/cpat_training/cpat-training-platform/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Desktop Safari - Clinical Compliance",
+        "name": "Desktop Safari - Clinical Compliance",
+        "testDir": "/Users/ryan/cpat_training/cpat-training-platform/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/ryan/cpat_training/cpat-training-platform/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "iPad - Mobile Therapeutic Experience",
+        "name": "iPad - Mobile Therapeutic Experience",
+        "testDir": "/Users/ryan/cpat_training/cpat-training-platform/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/ryan/cpat_training/cpat-training-platform/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "iPhone - Accessibility Testing",
+        "name": "iPhone - Accessibility Testing",
+        "testDir": "/Users/ryan/cpat_training/cpat-training-platform/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/ryan/cpat_training/cpat-training-platform/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "High Contrast - Visual Accessibility",
+        "name": "High Contrast - Visual Accessibility",
+        "testDir": "/Users/ryan/cpat_training/cpat-training-platform/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/ryan/cpat_training/cpat-training-platform/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Reduced Motion - Motor Accessibility",
+        "name": "Reduced Motion - Motor Accessibility",
+        "testDir": "/Users/ryan/cpat_training/cpat-training-platform/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.55.0",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run dev",
+      "url": "http://localhost:5173",
+      "reuseExistingServer": true,
+      "timeout": 120000
+    }
+  },
+  "suites": [
+    {
+      "title": "comprehensive-workflow-test.spec.ts",
+      "file": "comprehensive-workflow-test.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Comprehensive CPAT Training Workflow",
+          "file": "comprehensive-workflow-test.spec.ts",
+          "line": 16,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Complete Training Workflow - Full Journey",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Chrome - Therapeutic UX",
+                  "projectName": "Desktop Chrome - Therapeutic UX",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 3189,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m6\u001b[39m\nReceived: \u001b[31m7\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m6\u001b[39m\nReceived: \u001b[31m7\u001b[39m\n    at testLandingAndWelcome (/Users/ryan/cpat_training/cpat-training-platform/tests/e2e/workflow-test-suite.ts:15:37)\n    at /Users/ryan/cpat_training/cpat-training-platform/tests/e2e/comprehensive-workflow-test.spec.ts:32:5",
+                        "location": {
+                          "file": "/Users/ryan/cpat_training/cpat-training-platform/tests/e2e/workflow-test-suite.ts",
+                          "column": 37,
+                          "line": 15
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39mworkflow-test-suite.ts:15\n\n  13 |   // Check training modules preview\n  14 |   const moduleCards = page.locator('[data-whimsy=\"module-preview-card\"]');\n> 15 |   expect(await moduleCards.count()).toBe(6);\n     |                                     ^\n  16 |   \n  17 |   // Verify therapeutic styling is applied\n  18 |   await expect(page.locator('.therapeutic-app')).toBeVisible();"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/ryan/cpat_training/cpat-training-platform/tests/e2e/workflow-test-suite.ts",
+                            "column": 37,
+                            "line": 15
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m6\u001b[39m\nReceived: \u001b[31m7\u001b[39m\n\n   at workflow-test-suite.ts:15\n\n  13 |   // Check training modules preview\n  14 |   const moduleCards = page.locator('[data-whimsy=\"module-preview-card\"]');\n> 15 |   expect(await moduleCards.count()).toBe(6);\n     |                                     ^\n  16 |   \n  17 |   // Verify therapeutic styling is applied\n  18 |   await expect(page.locator('.therapeutic-app')).toBeVisible();\n    at testLandingAndWelcome (/Users/ryan/cpat_training/cpat-training-platform/tests/e2e/workflow-test-suite.ts:15:37)\n    at /Users/ryan/cpat_training/cpat-training-platform/tests/e2e/comprehensive-workflow-test.spec.ts:32:5"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "🚀 Starting comprehensive CPAT training workflow test...\n"
+                        },
+                        {
+                          "text": "📍 Testing landing page and welcome experience...\n"
+                        },
+                        {
+                          "text": "  📍 Landing on welcome page...\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-04T22:31:49.334Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/ryan/cpat_training/cpat-training-platform/test-results/comprehensive-workflow-tes-a48e7-ing-Workflow---Full-Journey-Desktop-Chrome---Therapeutic-UX/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/ryan/cpat_training/cpat-training-platform/test-results/comprehensive-workflow-tes-a48e7-ing-Workflow---Full-Journey-Desktop-Chrome---Therapeutic-UX/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/ryan/cpat_training/cpat-training-platform/test-results/comprehensive-workflow-tes-a48e7-ing-Workflow---Full-Journey-Desktop-Chrome---Therapeutic-UX/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/ryan/cpat_training/cpat-training-platform/test-results/comprehensive-workflow-tes-a48e7-ing-Workflow---Full-Journey-Desktop-Chrome---Therapeutic-UX/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/ryan/cpat_training/cpat-training-platform/tests/e2e/workflow-test-suite.ts",
+                        "column": 37,
+                        "line": 15
+                      }
+                    },
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1510,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m6\u001b[39m\nReceived: \u001b[31m7\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m6\u001b[39m\nReceived: \u001b[31m7\u001b[39m\n    at testLandingAndWelcome (/Users/ryan/cpat_training/cpat-training-platform/tests/e2e/workflow-test-suite.ts:15:37)\n    at /Users/ryan/cpat_training/cpat-training-platform/tests/e2e/comprehensive-workflow-test.spec.ts:32:5",
+                        "location": {
+                          "file": "/Users/ryan/cpat_training/cpat-training-platform/tests/e2e/workflow-test-suite.ts",
+                          "column": 37,
+                          "line": 15
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39mworkflow-test-suite.ts:15\n\n  13 |   // Check training modules preview\n  14 |   const moduleCards = page.locator('[data-whimsy=\"module-preview-card\"]');\n> 15 |   expect(await moduleCards.count()).toBe(6);\n     |                                     ^\n  16 |   \n  17 |   // Verify therapeutic styling is applied\n  18 |   await expect(page.locator('.therapeutic-app')).toBeVisible();"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/ryan/cpat_training/cpat-training-platform/tests/e2e/workflow-test-suite.ts",
+                            "column": 37,
+                            "line": 15
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m6\u001b[39m\nReceived: \u001b[31m7\u001b[39m\n\n   at workflow-test-suite.ts:15\n\n  13 |   // Check training modules preview\n  14 |   const moduleCards = page.locator('[data-whimsy=\"module-preview-card\"]');\n> 15 |   expect(await moduleCards.count()).toBe(6);\n     |                                     ^\n  16 |   \n  17 |   // Verify therapeutic styling is applied\n  18 |   await expect(page.locator('.therapeutic-app')).toBeVisible();\n    at testLandingAndWelcome (/Users/ryan/cpat_training/cpat-training-platform/tests/e2e/workflow-test-suite.ts:15:37)\n    at /Users/ryan/cpat_training/cpat-training-platform/tests/e2e/comprehensive-workflow-test.spec.ts:32:5"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "🚀 Starting comprehensive CPAT training workflow test...\n"
+                        },
+                        {
+                          "text": "📍 Testing landing page and welcome experience...\n"
+                        },
+                        {
+                          "text": "  📍 Landing on welcome page...\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2025-09-04T22:31:56.478Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/ryan/cpat_training/cpat-training-platform/test-results/comprehensive-workflow-tes-a48e7-ing-Workflow---Full-Journey-Desktop-Chrome---Therapeutic-UX-retry1/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/ryan/cpat_training/cpat-training-platform/test-results/comprehensive-workflow-tes-a48e7-ing-Workflow---Full-Journey-Desktop-Chrome---Therapeutic-UX-retry1/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/ryan/cpat_training/cpat-training-platform/test-results/comprehensive-workflow-tes-a48e7-ing-Workflow---Full-Journey-Desktop-Chrome---Therapeutic-UX-retry1/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/ryan/cpat_training/cpat-training-platform/test-results/comprehensive-workflow-tes-a48e7-ing-Workflow---Full-Journey-Desktop-Chrome---Therapeutic-UX-retry1/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/ryan/cpat_training/cpat-training-platform/tests/e2e/workflow-test-suite.ts",
+                        "column": 37,
+                        "line": 15
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5e68282febbb713929ea-7f7381893229106a9dc1",
+              "file": "comprehensive-workflow-test.spec.ts",
+              "line": 27,
+              "column": 3
+            },
+            {
+              "title": "Therapeutic UI & Interactions Test",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Chrome - Therapeutic UX",
+                  "projectName": "Desktop Chrome - Therapeutic UX",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1327,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "🎨 Testing therapeutic animations and UI interactions...\n"
+                        },
+                        {
+                          "text": "  🎨 Testing therapeutic animations and UI interactions...\n"
+                        },
+                        {
+                          "text": "  ✅ Therapeutic animations and interactions verified\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-04T22:32:05.505Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5e68282febbb713929ea-52bd92ed1dcb6687bb08",
+              "file": "comprehensive-workflow-test.spec.ts",
+              "line": 61,
+              "column": 3
+            },
+            {
+              "title": "Mobile Responsiveness Test",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Chrome - Therapeutic UX",
+                  "projectName": "Desktop Chrome - Therapeutic UX",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1548,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "📱 Testing mobile responsiveness...\n"
+                        },
+                        {
+                          "text": "  📱 Testing mobile responsiveness...\n"
+                        },
+                        {
+                          "text": "  ✅ Mobile responsiveness verified\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-04T22:32:07.252Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5e68282febbb713929ea-070e879f28ca38097ffc",
+              "file": "comprehensive-workflow-test.spec.ts",
+              "line": 66,
+              "column": 3
+            },
+            {
+              "title": "Error Handling & Boundaries Test",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Chrome - Therapeutic UX",
+                  "projectName": "Desktop Chrome - Therapeutic UX",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1293,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "🚨 Testing error boundaries and edge cases...\n"
+                        },
+                        {
+                          "text": "  🚨 Testing error boundaries and edge cases...\n"
+                        },
+                        {
+                          "text": "  ✅ Error boundary functionality verified\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-04T22:32:08.808Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5e68282febbb713929ea-56b83d20c60cef6f3a9c",
+              "file": "comprehensive-workflow-test.spec.ts",
+              "line": 71,
+              "column": 3
+            },
+            {
+              "title": "Loading States & Transitions Test",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Chrome - Therapeutic UX",
+                  "projectName": "Desktop Chrome - Therapeutic UX",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1477,
+                      "error": {
+                        "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main role=\"main\" class=\"pt-20\">…</main> aka getByText('Skip to main contentWelcome')\n    2) <main tabindex=\"-1\" id=\"main-content\" class=\"focus:outline-none\">…</main> aka locator('#main-content')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n",
+                        "stack": "Error: expect.toBeVisible: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main role=\"main\" class=\"pt-20\">…</main> aka getByText('Skip to main contentWelcome')\n    2) <main tabindex=\"-1\" id=\"main-content\" class=\"focus:outline-none\">…</main> aka locator('#main-content')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\n    at testLoadingStates (/Users/ryan/cpat_training/cpat-training-platform/tests/e2e/workflow-test-suite.ts:297:38)\n    at /Users/ryan/cpat_training/cpat-training-platform/tests/e2e/comprehensive-workflow-test.spec.ts:78:5",
+                        "location": {
+                          "file": "/Users/ryan/cpat_training/cpat-training-platform/tests/e2e/workflow-test-suite.ts",
+                          "column": 38,
+                          "line": 297
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39mworkflow-test-suite.ts:297\n\n  295 |   \n  296 |   // Check that content loads smoothly\n> 297 |   await expect(page.locator('main')).toBeVisible();\n      |                                      ^\n  298 |   \n  299 |   // Test navigation transitions\n  300 |   const navigationLinks = page.locator('nav a, [role=\"button\"]');"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/ryan/cpat_training/cpat-training-platform/tests/e2e/workflow-test-suite.ts",
+                            "column": 38,
+                            "line": 297
+                          },
+                          "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main role=\"main\" class=\"pt-20\">…</main> aka getByText('Skip to main contentWelcome')\n    2) <main tabindex=\"-1\" id=\"main-content\" class=\"focus:outline-none\">…</main> aka locator('#main-content')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\n\n   at workflow-test-suite.ts:297\n\n  295 |   \n  296 |   // Check that content loads smoothly\n> 297 |   await expect(page.locator('main')).toBeVisible();\n      |                                      ^\n  298 |   \n  299 |   // Test navigation transitions\n  300 |   const navigationLinks = page.locator('nav a, [role=\"button\"]');\n    at testLoadingStates (/Users/ryan/cpat_training/cpat-training-platform/tests/e2e/workflow-test-suite.ts:297:38)\n    at /Users/ryan/cpat_training/cpat-training-platform/tests/e2e/comprehensive-workflow-test.spec.ts:78:5"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "⏳ Testing loading states and transitions...\n"
+                        },
+                        {
+                          "text": "  ⏳ Testing loading states and transitions...\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-04T22:32:10.116Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/ryan/cpat_training/cpat-training-platform/test-results/comprehensive-workflow-tes-17633-ing-States-Transitions-Test-Desktop-Chrome---Therapeutic-UX/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/ryan/cpat_training/cpat-training-platform/test-results/comprehensive-workflow-tes-17633-ing-States-Transitions-Test-Desktop-Chrome---Therapeutic-UX/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/ryan/cpat_training/cpat-training-platform/test-results/comprehensive-workflow-tes-17633-ing-States-Transitions-Test-Desktop-Chrome---Therapeutic-UX/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/ryan/cpat_training/cpat-training-platform/test-results/comprehensive-workflow-tes-17633-ing-States-Transitions-Test-Desktop-Chrome---Therapeutic-UX/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/ryan/cpat_training/cpat-training-platform/tests/e2e/workflow-test-suite.ts",
+                        "column": 38,
+                        "line": 297
+                      }
+                    },
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1713,
+                      "error": {
+                        "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main role=\"main\" class=\"pt-20\">…</main> aka getByText('Skip to main contentWelcome')\n    2) <main tabindex=\"-1\" id=\"main-content\" class=\"focus:outline-none\">…</main> aka locator('#main-content')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n",
+                        "stack": "Error: expect.toBeVisible: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main role=\"main\" class=\"pt-20\">…</main> aka getByText('Skip to main contentWelcome')\n    2) <main tabindex=\"-1\" id=\"main-content\" class=\"focus:outline-none\">…</main> aka locator('#main-content')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\n    at testLoadingStates (/Users/ryan/cpat_training/cpat-training-platform/tests/e2e/workflow-test-suite.ts:297:38)\n    at /Users/ryan/cpat_training/cpat-training-platform/tests/e2e/comprehensive-workflow-test.spec.ts:78:5",
+                        "location": {
+                          "file": "/Users/ryan/cpat_training/cpat-training-platform/tests/e2e/workflow-test-suite.ts",
+                          "column": 38,
+                          "line": 297
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39mworkflow-test-suite.ts:297\n\n  295 |   \n  296 |   // Check that content loads smoothly\n> 297 |   await expect(page.locator('main')).toBeVisible();\n      |                                      ^\n  298 |   \n  299 |   // Test navigation transitions\n  300 |   const navigationLinks = page.locator('nav a, [role=\"button\"]');"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/ryan/cpat_training/cpat-training-platform/tests/e2e/workflow-test-suite.ts",
+                            "column": 38,
+                            "line": 297
+                          },
+                          "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('main') resolved to 2 elements:\n    1) <main role=\"main\" class=\"pt-20\">…</main> aka getByText('Skip to main contentWelcome')\n    2) <main tabindex=\"-1\" id=\"main-content\" class=\"focus:outline-none\">…</main> aka locator('#main-content')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('main')\u001b[22m\n\n\n   at workflow-test-suite.ts:297\n\n  295 |   \n  296 |   // Check that content loads smoothly\n> 297 |   await expect(page.locator('main')).toBeVisible();\n      |                                      ^\n  298 |   \n  299 |   // Test navigation transitions\n  300 |   const navigationLinks = page.locator('nav a, [role=\"button\"]');\n    at testLoadingStates (/Users/ryan/cpat_training/cpat-training-platform/tests/e2e/workflow-test-suite.ts:297:38)\n    at /Users/ryan/cpat_training/cpat-training-platform/tests/e2e/comprehensive-workflow-test.spec.ts:78:5"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "⏳ Testing loading states and transitions...\n"
+                        },
+                        {
+                          "text": "  ⏳ Testing loading states and transitions...\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2025-09-04T22:32:12.471Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/ryan/cpat_training/cpat-training-platform/test-results/comprehensive-workflow-tes-17633-ing-States-Transitions-Test-Desktop-Chrome---Therapeutic-UX-retry1/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/ryan/cpat_training/cpat-training-platform/test-results/comprehensive-workflow-tes-17633-ing-States-Transitions-Test-Desktop-Chrome---Therapeutic-UX-retry1/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/ryan/cpat_training/cpat-training-platform/test-results/comprehensive-workflow-tes-17633-ing-States-Transitions-Test-Desktop-Chrome---Therapeutic-UX-retry1/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/ryan/cpat_training/cpat-training-platform/test-results/comprehensive-workflow-tes-17633-ing-States-Transitions-Test-Desktop-Chrome---Therapeutic-UX-retry1/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/ryan/cpat_training/cpat-training-platform/tests/e2e/workflow-test-suite.ts",
+                        "column": 38,
+                        "line": 297
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5e68282febbb713929ea-50012db68819f94d72ec",
+              "file": "comprehensive-workflow-test.spec.ts",
+              "line": 76,
+              "column": 3
+            },
+            {
+              "title": "Accessibility Compliance Test",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Chrome - Therapeutic UX",
+                  "projectName": "Desktop Chrome - Therapeutic UX",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1309,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "♿ Testing accessibility compliance...\n"
+                        },
+                        {
+                          "text": "♿ Accessibility tests completed\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-04T22:32:15.337Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5e68282febbb713929ea-e5c0e8e7500c88bdd884",
+              "file": "comprehensive-workflow-test.spec.ts",
+              "line": 81,
+              "column": 3
+            },
+            {
+              "title": "Performance & Animation Optimization Test",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Desktop Chrome - Therapeutic UX",
+                  "projectName": "Desktop Chrome - Therapeutic UX",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1140,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "⚡ Testing performance and animations...\n"
+                        },
+                        {
+                          "text": "⚡ Performance metrics collected: {\n  navigation: {\n    name: \u001b[32m'http://localhost:5173/training'\u001b[39m,\n    entryType: \u001b[32m'navigation'\u001b[39m,\n    startTime: \u001b[33m0\u001b[39m,\n    duration: \u001b[33m63.79999999701977\u001b[39m,\n    initiatorType: \u001b[32m'navigation'\u001b[39m,\n    deliveryType: \u001b[32m''\u001b[39m,\n    nextHopProtocol: \u001b[32m'http/1.1'\u001b[39m,\n    renderBlockingStatus: \u001b[32m'non-blocking'\u001b[39m,\n    workerStart: \u001b[33m0\u001b[39m,\n    workerRouterEvaluationStart: \u001b[33m0\u001b[39m,\n    workerCacheLookupStart: \u001b[33m0\u001b[39m,\n    workerMatchedSourceType: \u001b[32m''\u001b[39m,\n    workerFinalSourceType: \u001b[32m''\u001b[39m,\n    redirectStart: \u001b[33m0\u001b[39m,\n    redirectEnd: \u001b[33m0\u001b[39m,\n    fetchStart: \u001b[33m1.2000000029802322\u001b[39m,\n    domainLookupStart: \u001b[33m1.2000000029802322\u001b[39m,\n    domainLookupEnd: \u001b[33m1.2000000029802322\u001b[39m,\n    connectStart: \u001b[33m1.2000000029802322\u001b[39m,\n    secureConnectionStart: \u001b[33m0\u001b[39m,\n    connectEnd: \u001b[33m1.2000000029802322\u001b[39m,\n    requestStart: \u001b[33m1.7999999970197678\u001b[39m,\n    responseStart: \u001b[33m6.799999997019768\u001b[39m,\n    firstInterimResponseStart: \u001b[33m0\u001b[39m,\n    finalResponseHeadersStart: \u001b[33m6.799999997019768\u001b[39m,\n    responseEnd: \u001b[33m7.100000008940697\u001b[39m,\n    transferSize: \u001b[33m939\u001b[39m,\n    encodedBodySize: \u001b[33m639\u001b[39m,\n    decodedBodySize: \u001b[33m639\u001b[39m,\n    responseStatus: \u001b[33m200\u001b[39m,\n    serverTiming: [],\n    unloadEventStart: \u001b[33m8.200000002980232\u001b[39m,\n    unloadEventEnd: \u001b[33m8.200000002980232\u001b[39m,\n    domInteractive: \u001b[33m11.100000008940697\u001b[39m,\n    domContentLoadedEventStart: \u001b[33m62.79999999701977\u001b[39m,\n    domContentLoadedEventEnd: \u001b[33m62.900000005960464\u001b[39m,\n    domComplete: \u001b[33m63.79999999701977\u001b[39m,\n    loadEventStart: \u001b[33m63.79999999701977\u001b[39m,\n    loadEventEnd: \u001b[33m63.79999999701977\u001b[39m,\n    type: \u001b[32m'reload'\u001b[39m,\n    redirectCount: \u001b[33m0\u001b[39m,\n    activationStart: \u001b[33m0\u001b[39m,\n    criticalCHRestart: \u001b[33m0\u001b[39m,\n    notRestoredReasons: \u001b[1mnull\u001b[22m\n  },\n  paint: [\n    {\n      name: \u001b[32m'first-paint'\u001b[39m,\n      entryType: \u001b[32m'paint'\u001b[39m,\n      startTime: \u001b[33m80\u001b[39m,\n      duration: \u001b[33m0\u001b[39m\n    },\n    {\n      name: \u001b[32m'first-contentful-paint'\u001b[39m,\n      entryType: \u001b[32m'paint'\u001b[39m,\n      startTime: \u001b[33m116\u001b[39m,\n      duration: \u001b[33m0\u001b[39m\n    }\n  ]\n}\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-04T22:32:16.976Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5e68282febbb713929ea-d104197232f616e4ecf6",
+              "file": "comprehensive-workflow-test.spec.ts",
+              "line": 104,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-09-04T22:31:48.843Z",
+    "duration": 29468.124,
+    "expected": 5,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}
