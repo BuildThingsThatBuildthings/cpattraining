@@ -1,12 +1,10 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { useProgressTracking } from '../hooks/useProgressTracking'
 import { GraduationCap, LayoutDashboard, MessageSquare, RefreshCw, Sparkles, Shield, Menu, X } from 'lucide-react'
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const location = useLocation()
-  const { progress } = useProgressTracking()
 
   const navigationItems = [
     { path: '/training', title: 'Training', icon: GraduationCap, description: 'CPAT Certification' },
@@ -18,7 +16,6 @@ const Navigation = () => {
   ]
 
   const isTrainingPath = location.pathname.startsWith('/training')
-  const progressPercentage = Math.round((progress.completedModules.length / 6) * 100)
 
   return (
     <>
